@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jonathan Thoms | IT Coordinator & EtchCentric</title>
-  <meta name="description" content="Jonathan Thoms — IT Coordinator at Canada Fluorspar Inc. Founder & Director of EtchCentric Creations. Infrastructure, automation, and clean documentation." />
-  <link rel="preload" as="image" href="assets/Portrait.png">
+  <title>Jonathan Thoms | IT Coordinator • Keel Systems • EtchCentric</title>
+  <meta name="description" content="Jonathan Thoms — IT Coordinator at Canada Fluorspar Inc. Founder of Keel Systems and EtchCentric Creations. Infrastructure, automation, and documented processes that scale." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thoms.email/" />
+  <meta property="og:title" content="Jonathan Thoms | IT Coordinator, Keel Systems, EtchCentric" />
+  <meta property="og:description" content="Infrastructure and automation with a people-first approach. IT Coordinator at CFI. Founder of Keel Systems and EtchCentric Creations." />
+  <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="image" href="assets/Portrait.png" />
   <style>
     :root{
       --ink:#0d1b2a;
@@ -18,6 +27,12 @@
       --radius:14px;
       --shadow: 0 6px 18px rgba(0,0,0,.07);
     }
+    [data-theme='dark']{
+      --paper:#0b1220;
+      --text:#e6e9ef;
+      --card:#0f172a;
+      --ring: rgba(255,255,255,.12);
+    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
@@ -25,106 +40,81 @@
       color:var(--text);
       background:var(--paper);
       line-height:1.6;
+      transition: background .2s ease, color .2s ease;
     }
 
-    /* NAV */
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background:var(--ink);
-      color:#fff;
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .nav .wrap{
-      max-width:1000px; margin:0 auto; padding:.75rem 1rem;
-      display:flex; align-items:center; gap:1rem; justify-content:space-between;
-    }
+    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
     .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
     .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
-    .menu{display:flex; gap:.75rem; flex-wrap:wrap}
-    .menu a{
-      color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px;
-    }
+    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
+    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
     .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
 
-    /* HEADER / HERO */
-    header{
-      text-align:center;
-      padding:3.5rem 1rem 2.5rem;
-      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
-      color:#fff;
-    }
-
-    /* Avatar: perfectly round, no warping, crisp ring */
+    header{text-align:center; padding:3.5rem 1rem 2.5rem; background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%); color:#fff}
     header .avatar{
-      --avatar: 180px;   /* size of the circle */
-      --ringw: 4px;      /* ring thickness */
-      --y: 42%;          /* vertical face offset: lower value moves image up */
-
-      inline-size: var(--avatar);
-      aspect-ratio: 1 / 1;            /* ensures a true square on all screens */
-      border-radius: 50%;
-      padding: var(--ringw);
+      --avatar: 180px; --ringw: 4px; --y: 42%;
+      inline-size: var(--avatar); aspect-ratio: 1/1; border-radius:50%; padding: var(--ringw);
       margin: 0 auto 1rem;
-      /* ring with zero seams on HiDPI */
-      background:
-        linear-gradient(#ffffff, #ffffff) padding-box,
-        linear-gradient(135deg, #cdd7ee, #e9eef8) border-box;
+      background: linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(135deg, #cdd7ee, #e9eef8) border-box;
       box-shadow: 0 10px 26px rgba(0,0,0,.18);
     }
-    header .avatar .frame{
-      inline-size: 100%;
-      block-size: 100%;
-      border-radius: 50%;
-      overflow: hidden;               /* does the circular crop */
-    }
-    header .avatar img{
-      inline-size: 100%;
-      block-size: 100%;
-      object-fit: cover;              /* fills circle without distortion */
-      object-position: 50% var(--y);  /* nudge the face into the sweet spot */
-      transform: translateZ(0);       /* crisper edge on some GPUs */
-      image-rendering: auto;
-    }
-
+    header .avatar .frame{inline-size:100%; block-size:100%; border-radius:50%; overflow:hidden}
+    header .avatar img{inline-size:100%; block-size:100%; object-fit:cover; object-position:50% var(--y); transform: translateZ(0); image-rendering:auto}
     header h1{margin:.5rem 0 0; font-size:clamp(1.8rem, 2.4vw + 1.2rem, 2.4rem)}
     header p.sub{margin:.35rem 0 1rem; color:var(--sky)}
-    .cta{
-      display:inline-flex; gap:.6rem; align-items:center;
-      background:#fff; color:var(--ink); text-decoration:none;
-      padding:.6rem .9rem; border-radius:10px; font-weight:600;
-      box-shadow:0 8px 16px rgba(0,0,0,.08);
-    }
+    .cta{display:inline-flex; gap:.6rem; align-items:center; background:#fff; color:var(--ink); text-decoration:none; padding:.6rem .9rem; border-radius:10px; font-weight:600; box-shadow:0 8px 16px rgba(0,0,0,.08)}
     .cta:hover{transform:translateY(-1px)}
     .cta.secondary{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25); box-shadow:none}
 
-    /* LAYOUT */
     main{max-width:1000px; margin:2rem auto; padding:0 1rem}
-    section{
-      background:var(--card); border-radius:var(--radius); padding:1.4rem;
-      margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring);
-    }
+    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
     section h2{margin:.2rem 0 1rem; color:var(--ink)}
     h3{margin:.6rem 0 .3rem}
     ul{margin:.4rem 0 .8rem 1.1rem}
     .grid{display:grid; gap:1rem}
     @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
 
-    footer{
-      text-align:center; color:#667; padding:1.6rem; font-size:.95rem;
-    }
-    .pill{
-      display:inline-block; background:#eef2ff; color:#2a2f36; padding:.25rem .6rem;
-      border-radius:999px; font-size:.85rem; margin:.15rem .25rem 0 0
-    }
+    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
+    .pill{display:inline-block; background:#eef2ff; color:#2a2f36; padding:.25rem .6rem; border-radius:999px; font-size:.85rem; margin:.15rem .25rem 0 0}
+    [data-theme='dark'] .pill{background:#1e293b; color:#e6e9ef}
     .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem}
     .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
     .btn.dark{background:var(--ink); color:#fff}
     .btn.ghost{border:1px solid #c9d1e3; color:var(--ink)}
   </style>
+  <script>
+    // theme toggle
+    (function(){
+      const key = 'theme';
+      const saved = localStorage.getItem(key);
+      if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+      window.toggleTheme = function(){
+        const next = (document.documentElement.getAttribute('data-theme') === 'dark') ? '' : 'dark';
+        if(next){ document.documentElement.setAttribute('data-theme', next); localStorage.setItem(key, next); }
+        else { document.documentElement.removeAttribute('data-theme'); localStorage.removeItem(key); }
+      };
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jonathan Thoms",
+    "jobTitle": "IT Coordinator",
+    "image": "https://thoms.email/assets/Portrait@2x.png",
+    "url": "https://thoms.email/",
+    "sameAs": [
+      "https://www.linkedin.com/in/jonathan-thoms-a43b65a4/",
+      "https://keel.systems/"
+    ]
+  }
+  </script>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" aria-label="Primary">
     <div class="wrap">
       <div class="brand"><span class="dot"></span> Jonathan Thoms</div>
@@ -132,24 +122,27 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#etchcentric">EtchCentric</a>
+        <a href="#keel">Keel Systems</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
         <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="toggle" onclick="toggleTheme()">Light/Dark</button>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header>
     <div class="avatar" style="--avatar:180px; --ringw:4px; --y:42%;">
       <div class="frame">
         <img src="assets/Portrait.png"
              srcset="assets/Portrait@2x.png 2x"
-             alt="Portrait of Jonathan Thoms">
+             alt="Portrait of Jonathan Thoms"
+             loading="eager" decoding="async">
       </div>
     </div>
     <h1>Jonathan Thoms</h1>
-    <p class="sub">IT Coordinator @ Canada Fluorspar Inc. • Founder & Director @ EtchCentric Creations</p>
+    <p class="sub">IT Coordinator @ Canada Fluorspar Inc. • Founder of Keel Systems & EtchCentric Creations</p>
     <div class="btn-row" role="group" aria-label="Primary actions">
       <a class="cta" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">View LinkedIn</a>
       <a class="cta secondary" href="#contact">Get in touch</a>
@@ -161,16 +154,16 @@
       <h2>About Me</h2>
       <p>
         Detail-oriented, people-first IT professional based in Newfoundland. I run stable, secure infrastructure
-        and ship well-documented automation that removes friction for teams. I’ve led everything from firewall
-        and wireless upgrades to SharePoint/Power Automate workflows and asset tracking, with a strong focus on
-        clarity, reliability, and maintainability.
+        and ship documented automation that removes friction for teams. I have led firewall and wireless upgrades,
+        built SharePoint and Power Automate workflows, and implemented asset tracking with a focus on clarity,
+        reliability, and maintainability.
       </p>
       <div>
         <span class="pill">Infrastructure & Networking</span>
         <span class="pill">Cybersecurity</span>
         <span class="pill">SharePoint & Power Automate</span>
         <span class="pill">Process Optimization</span>
-        <span class="pill">Client-centered Documentation</span>
+        <span class="pill">User-centered Docs</span>
       </div>
     </section>
 
@@ -181,36 +174,35 @@
           <h3>IT Coordinator — Canada Fluorspar Inc.</h3>
           <p><em>Nov 2024 – Present · St. Lawrence, NL</em></p>
           <ul>
-            <li>Lead site-wide IT operations across multiple facilities; ensure stable, secure, and scalable systems.</li>
-            <li>Own vendor relationships and service contracts; oversee licensing, firewalls, and high-priority escalations.</li>
-            <li>Built an internal ticketing system with SharePoint & Teams to streamline support and reporting.</li>
-            <li>Implemented asset tracking for laptops, radios, and specialized equipment with auditability.</li>
-            <li>Drive modernization efforts (firewalls, APs, SFP fiber) and robust onboarding/offboarding processes.</li>
+            <li>Lead site-wide IT operations across multiple facilities to ensure stable, secure, and scalable systems.</li>
+            <li>Manage vendor relationships and service contracts while overseeing licensing, firewalls, and escalations.</li>
+            <li>Built a SharePoint-based ticketing system integrated with Teams for streamlined reporting.</li>
+            <li>Implemented asset tracking for laptops, radios, and specialized equipment with audit trails.</li>
+            <li>Modernized firewalls, wireless access points, and SFP fiber links. Standardized onboarding and offboarding.</li>
           </ul>
         </div>
         <div>
           <h3>IT Technician — Canada Fluorspar Inc.</h3>
           <p><em>Jul 2024 – Nov 2024 · St. Lawrence, NL</em></p>
           <ul>
-            <li>Primary on-site support; coordinated with external providers to maintain network integrity.</li>
-            <li>Standardized hardware/software troubleshooting and equipment management.</li>
-            <li>Partnered with HR on account lifecycle, security, and access documentation.</li>
+            <li>Provided on-site support and coordinated with external providers to maintain network integrity.</li>
+            <li>Standardized troubleshooting flows and equipment management. Partnered with HR on account lifecycle.</li>
           </ul>
         </div>
       </div>
 
       <h3>Earlier roles</h3>
       <ul>
-        <li>Mobile Maintenance Planner; Junior/Project Engineer (CFI) — planning, QA/QC, and cross-functional coordination.</li>
-        <li>Network Technician (Bell Aliant) — provisioning DSL/POTS and service execution with external teams.</li>
+        <li>Mobile Maintenance Planner; Junior and Project Engineer (CFI)</li>
+        <li>Network Technician (Bell Aliant)</li>
       </ul>
     </section>
 
     <section id="etchcentric">
       <h2>EtchCentric Creations</h2>
       <p>
-        Laser engraving & cutting studio producing custom gifts, signage, and branded products.
-        I handle creative direction, production, client relations, and marketing (online & local).
+        Laser engraving and cutting studio producing custom gifts, signage, and branded products.
+        I handle creative direction, production, client relations, and marketing.
       </p>
       <div class="btn-row">
         <a class="btn dark" href="https://etchcentric.square.site/" target="_blank" rel="noopener">Visit the Store</a>
@@ -218,36 +210,83 @@
       </div>
     </section>
 
+    <section id="keel">
+      <h2>Keel Systems</h2>
+      <p>
+        Personal consulting focused on home-lab architecture and small-business infrastructure.
+        I build Proxmox environments, private cloud stacks with Nextcloud and Tailscale, and automation with PowerShell and Python.
+      </p>
+      <ul>
+        <li>Self-hosted cloud design and deployment with Traefik and Cloudflare Tunnels.</li>
+        <li>Network segmentation guidance, firewall policy, and secure remote access design.</li>
+        <li>Lightweight automation for media management and backup integrity.</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn dark" href="https://keel.systems" target="_blank" rel="noopener">Visit Keel Systems</a>
+        <a class="btn ghost" href="mailto:jonathan@keel.systems">Consulting inquiries</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>Hosted ERP SLA Redline (2025)</h3>
+          <p>Due-diligence work defining uptime credits, DR validation, and secure data exit standards.</p>
+        </div>
+        <div>
+          <h3>Nextcloud Family Cloud</h3>
+          <p>Self-hosted media and documents with Jellyfin and Tailscale remote access.</p>
+        </div>
+        <div>
+          <h3>Cyber Awareness Program</h3>
+          <p>Evaluated and implemented training workflows across departments.</p>
+        </div>
+        <div>
+          <h3>Asset Tracker Suite</h3>
+          <p>Automated equipment assignment and audits with SharePoint, Power Automate, and Teams.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="skills">
       <h2>Skills & Tools</h2>
       <div class="grid cols-2">
         <ul>
-          <li>Windows Server, AD/Entra ID (Hybrid), Intune, Group Policy</li>
-          <li>Firewalls & Wi‑Fi (policy design, segmentation, rollout)</li>
-          <li>M365, SharePoint/Teams, Power Automate (API integrations)</li>
-          <li>Backup, DR, endpoint security & hardening</li>
+          <li>Windows Server, AD and Entra ID (Hybrid), Intune, Group Policy</li>
+          <li>Firewalls and Wi‑Fi planning, segmentation, rollout</li>
+          <li>Microsoft 365, SharePoint, Teams, Power Automate integrations</li>
+          <li>Backup, disaster recovery, endpoint security and hardening</li>
         </ul>
         <ul>
-          <li>Scripting & automation (PowerShell, Python)</li>
-          <li>Documentation & runbooks tailored for users</li>
-          <li>Project management & vendor coordination</li>
-          <li>Customer‑focused small business ops (EtchCentric)</li>
+          <li>PowerShell and Python automation</li>
+          <li>Documentation and runbooks tailored for users</li>
+          <li>Project management and vendor coordination</li>
+          <li>Small business operations and customer support</li>
         </ul>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email is best. I’m also on LinkedIn.</p>
+      <p>Email is best. I am also on LinkedIn.</p>
       <p>
         <a class="btn dark" href="mailto:jonathan@thoms.email">jonathan@thoms.email</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn Profile</a>
       </p>
     </section>
+
+    <section>
+      <h2>Beyond Work</h2>
+      <p>
+        Outside of IT, I explore laser design, music, chess, Formula 1, and Blue Jays baseball. I like building
+        automated workflows in my home lab and sharing what I learn.
+      </p>
+    </section>
   </main>
 
   <footer>
-    © 2025 Jonathan Thoms • Built with clean HTML/CSS
+    © 2025 Jonathan Thoms • Built with clean HTML and CSS
   </footer>
 </body>
 </html>
