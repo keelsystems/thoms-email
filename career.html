@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Career & Experience | Jonathan Thoms</title>
+  <meta name="description" content="Career history, key projects, and skills for Jonathan Thoms, IT Coordinator at Canada Fluorspar Inc and founder of Keel Systems." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thoms.email/career.html" />
+  <meta property="og:title" content="Career & Experience | Jonathan Thoms" />
+  <meta property="og:description" content="Detailed career history, selected projects, and skills for Jonathan Thoms." />
+  <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="image" href="assets/Portrait.png" />
+
+  <style>
+    :root{
+      --ink:#0d1b2a;
+      --ink-2:#1b263b;
+      --sky:#ccd6f6;
+      --paper:#f5f7fa;
+      --text:#2a2f36;
+      --card:#ffffff;
+      --ring: rgba(13,27,42,.15);
+      --radius:14px;
+      --shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    [data-theme='dark']{
+      --paper:#0b1220;
+      --text:#e6e9ef;
+      --card:#0f172a;
+      --ring: rgba(255,255,255,.12);
+    }
+
+    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--paper);
+      line-height:1.6;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
+    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
+    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
+
+    header{
+      text-align:left;
+      padding:3rem 1rem 2.3rem;
+      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:#fff;
+    }
+
+    .hero{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--sky);
+      opacity:.9;
+    }
+
+    header h1{
+      margin:.45rem 0 .35rem;
+      font-size:clamp(1.9rem, 2.6vw + 1.2rem, 2.5rem);
+    }
+
+    header p.sub{
+      margin:0 0 .55rem;
+      max-width:650px;
+      color:#e2e8ff;
+    }
+
+    header p.sub-secondary{
+      margin:0 0 1.1rem;
+      max-width:650px;
+      font-size:.97rem;
+      color:#c7d2fe;
+    }
+
+    .cta{
+      display:inline-flex;
+      gap:.6rem;
+      align-items:center;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      padding:.55rem .9rem;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 8px 16px rgba(0,0,0,.08);
+      border:1px solid transparent;
+      font-size:.9rem;
+    }
+
+    .cta.secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:none;
+    }
+
+    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
+    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
+    section h2{margin:.2rem 0 1rem; color:var(--ink)}
+    h3{margin:.6rem 0 .3rem}
+    h4{margin:.4rem 0 .25rem}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+    .grid{display:grid; gap:1rem}
+    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+
+    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
+
+    .pill{display:inline-block; background:#eef2ff; color:#2a2f36; padding:.25rem .6rem; border-radius:999px; font-size:.85rem; margin:.15rem .25rem 0 0}
+    [data-theme='dark'] .pill{background:#1e293b; color:#e6e9ef}
+
+    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center}
+    header .btn-row{justify-content:flex-start;}
+    .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
+    .btn.dark{background:var(--ink); color:#fff}
+    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.5rem .75rem;
+      background:#fff;
+      color:var(--ink);
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      z-index:100;
+    }
+    .skip-link:focus{
+      left:1rem;
+      top:1rem;
+    }
+  </style>
+
+  <script>
+    (function(){
+      const key = 'theme';
+      const saved = localStorage.getItem(key);
+      if(saved){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      window.toggleTheme = function(){
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? '' : 'dark';
+        if(next){
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem(key, next);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem(key);
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="/" style="color:#fff;text-decoration:none;">Jonathan Thoms</a>
+      </div>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/career.html">Career</a>
+        <a href="/keel.html">Keel Systems</a>
+        <a href="/lifestyle.html">Lifestyle</a>
+        <a href="/#hobbies">Hobbies</a>
+        <a href="/#gear">Gear</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero-kicker">Career</div>
+      <h1>Career &amp; Experience</h1>
+      <p class="sub">
+        Long-form view of my experience: roles, responsibilities, selected projects, and the tools I rely on most.
+      </p>
+      <p class="sub-secondary">
+        If you just want the quick story, the home page is the better overview. This page is for people who want to see how I actually work.
+      </p>
+      <div class="btn-row">
+        <a class="cta" href="mailto:jonathan@thoms.email">Email me</a>
+        <a class="cta secondary" href="/assets/JonathanThoms-Resume.pdf" target="_blank">Download resume (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main">
+    <section>
+      <h2>Current role</h2>
+      <h3>IT Coordinator · Canada Fluorspar Inc.</h3>
+      <p><em>Nov 2024 to present · St. Lawrence, NL</em></p>
+      <ul>
+        <li>Lead site-wide IT operations for 100+ users across multiple facilities, keeping systems stable, secure, and scalable.</li>
+        <li>Own day-to-day server, networking, and access control operations, plus coordination with external vendors and MSPs.</li>
+        <li>Manage licensing, firewalls, endpoint protection, and patching, including post-ransomware hardening work.</li>
+        <li>Built a SharePoint-based ticketing system integrated with Teams for streamlined reporting and tracking.</li>
+        <li>Implemented asset tracking for laptops, radios, and specialized equipment, with audit trails tied to employees and departments.</li>
+        <li>Modernized firewalls, wireless access points, and SFP fiber links, and standardized onboarding/offboarding and account lifecycle.</li>
+      </ul>
+      <div>
+        <span class="pill">Multi-site IT operations</span>
+        <span class="pill">Vendor and contract management</span>
+        <span class="pill">Security and compliance</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Previous experience</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>IT Technician · Canada Fluorspar Inc.</h3>
+          <p><em>Jul 2024 to Nov 2024 · St. Lawrence, NL</em></p>
+          <ul>
+            <li>Provided on-site support and coordinated with external providers to maintain network integrity and uptime.</li>
+            <li>Standardized troubleshooting flows and equipment management and partnered with HR on account lifecycle and joiner/mover/leaver processes.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Engineering and maintenance roles · Canada Fluorspar Inc.</h3>
+          <p><em>2018 – 2024 · St. Lawrence, NL</em></p>
+          <ul>
+            <li>Mobile Maintenance Planner; Junior and Project Engineer across capital projects and production support.</li>
+            <li>Developed an understanding of mine operations, maintenance constraints, and how downtime impacts the business.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Telecom</h3>
+      <p><strong>Network Technician · Bell Aliant</strong></p>
+      <ul>
+        <li>Hands-on work with outside plant and customer networks, troubleshooting connectivity and service issues on tight timelines.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected projects</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>Hosted ERP SLA redline</h3>
+          <p>Due diligence and contract work defining uptime targets, credit structures, DR validation, and secure data exit standards with ERP vendors.</p>
+        </div>
+        <div>
+          <h3>Nextcloud family cloud</h3>
+          <p>Self-hosted media and documents stack with Jellyfin and Tailscale, giving family a stable, private alternative to public cloud services.</p>
+        </div>
+        <div>
+          <h3>Cyber awareness program</h3>
+          <p>Evaluated awareness training options and drafted implementation paths that fit around shift work, regulatory requirements, and existing onboarding.</p>
+        </div>
+        <div>
+          <h3>Asset tracker suite</h3>
+          <p>Automated assignment and audits for laptops, radios, and other equipment using SharePoint, Power Automate, and Teams notifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills and tools</h2>
+      <div class="grid cols-2">
+        <div>
+          <h3>Infrastructure and security</h3>
+          <ul>
+            <li>Windows Server, Active Directory, Entra ID hybrid, Intune, Group Policy.</li>
+            <li>Firewall and Wi-Fi design, VLANs, segmentation, and rollout.</li>
+            <li>Backup, disaster recovery, endpoint protection, and hardening.</li>
+          </ul>
+
+          <h3>Microsoft 365 and collaboration</h3>
+          <ul>
+            <li>Microsoft 365 admin, licensing, and identity fundamentals.</li>
+            <li>SharePoint sites and structure, document libraries, and permissions.</li>
+            <li>Teams integration, channel structure, and notification hygiene.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Automation and data</h3>
+          <ul>
+            <li>PowerShell and Python for reporting, CSV/Excel automation, and small utilities.</li>
+            <li>Power Automate flows tying SharePoint, Teams, and email together.</li>
+          </ul>
+
+          <h3>Process and communication</h3>
+          <ul>
+            <li>Documentation and runbooks aimed at non-technical users.</li>
+            <li>Vendor coordination, quotes, and implementation follow-through.</li>
+            <li>Small business operations and customer support via Keel Systems and EtchCentric.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What I am looking for</h2>
+      <p>
+        I am most effective in roles where I can combine hands-on infrastructure work with process, automation,
+        and clear communication across teams. If you are looking for someone to stabilize an environment,
+        clean up tooling and documentation, and then keep iterating, that is where I fit best.
+      </p>
+      <div class="btn-row">
+        <a class="btn dark" href="mailto:jonathan@thoms.email">Get in touch</a>
+        <a class="btn ghost" href="/">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+  </footer>
+</body>
+</html>

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jonathan Thoms | IT Coordinator • Keel Systems • EtchCentric</title>
-  <meta name="description" content="Jonathan Thoms — IT Coordinator at Canada Fluorspar Inc. Founder of Keel Systems and EtchCentric Creations. Infrastructure, automation, and documented processes that scale." />
+  <title>Jonathan Thoms | IT • Keel Systems • EtchCentric</title>
+  <meta name="description" content="Jonathan Thoms - IT and automation specialist, IT Coordinator at Canada Fluorspar Inc, founder of Keel Systems and EtchCentric Creations. Infrastructure, automation, and documented processes that scale." />
   <meta name="author" content="Jonathan Thoms" />
   <link rel="canonical" href="https://thoms.email/" />
-  <meta property="og:title" content="Jonathan Thoms | IT Coordinator, Keel Systems, EtchCentric" />
+  <meta property="og:title" content="Jonathan Thoms | IT, Keel Systems, EtchCentric" />
   <meta property="og:description" content="Infrastructure and automation with a people-first approach. IT Coordinator at CFI. Founder of Keel Systems and EtchCentric Creations." />
   <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
   <meta property="og:type" content="website" />
@@ -15,6 +15,7 @@
   <link rel="icon" href="/favicon.svg" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preload" as="image" href="assets/Portrait.png" />
+
   <style>
     :root{
       --ink:#0d1b2a;
@@ -33,6 +34,11 @@
       --card:#0f172a;
       --ring: rgba(255,255,255,.12);
     }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
@@ -52,9 +58,14 @@
     .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
     .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
 
-    header{text-align:center; padding:3.5rem 1rem 2.5rem; background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%); color:#fff}
+    header{
+      text-align:center;
+      padding:3.5rem 1rem 2.5rem;
+      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:#fff
+    }
     header .avatar{
-      --avatar: 180px; --ringw: 4px; --y: 42%;
+      --avatar: 200px; --ringw: 4px; --y: 22%;
       inline-size: var(--avatar); aspect-ratio: 1/1; border-radius:50%; padding: var(--ringw);
       margin: 0 auto 1rem;
       background: linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(135deg, #cdd7ee, #e9eef8) border-box;
@@ -63,7 +74,8 @@
     header .avatar .frame{inline-size:100%; block-size:100%; border-radius:50%; overflow:hidden}
     header .avatar img{inline-size:100%; block-size:100%; object-fit:cover; object-position:50% var(--y); transform: translateZ(0); image-rendering:auto}
     header h1{margin:.5rem 0 0; font-size:clamp(1.8rem, 2.4vw + 1.2rem, 2.4rem)}
-    header p.sub{margin:.35rem 0 1rem; color:var(--sky)}
+    header p.sub{margin:.35rem 0 .35rem; color:var(--sky)}
+    header p.sub-secondary{margin:0 auto 1rem; max-width:650px; font-size:.98rem; color:#e2e8ff}
     .cta{display:inline-flex; gap:.6rem; align-items:center; background:#fff; color:var(--ink); text-decoration:none; padding:.6rem .9rem; border-radius:10px; font-weight:600; box-shadow:0 8px 16px rgba(0,0,0,.08)}
     .cta:hover{transform:translateY(-1px)}
     .cta.secondary{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25); box-shadow:none}
@@ -79,21 +91,87 @@
     footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
     .pill{display:inline-block; background:#eef2ff; color:#2a2f36; padding:.25rem .6rem; border-radius:999px; font-size:.85rem; margin:.15rem .25rem 0 0}
     [data-theme='dark'] .pill{background:#1e293b; color:#e6e9ef}
-    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem}
+    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center}
     .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
     .btn.dark{background:var(--ink); color:#fff}
-    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink)}
+    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
+
+    .pillars-grid{
+      display:grid;
+      gap:1rem;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      margin-top:.75rem;
+    }
+    .pillar-card{
+      padding:1rem;
+      border-radius:var(--radius);
+      border:1px solid var(--ring);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .pillar-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      border-color: rgba(13,27,42,.25);
+    }
+    .pillar-card h3{margin:.1rem 0 .4rem}
+    .pillar-card p{margin:0 0 .6rem; font-size:.95rem}
+    .pillar-card a{
+      font-size:.9rem;
+      font-weight:600;
+      text-decoration:none;
+      color:var(--ink);
+    }
+    [data-theme='dark'] .pillar-card a{color:#cbd5ff}
+
+    .gear-note{
+      font-size:.85rem;
+      color:#777;
+      margin-top:.4rem;
+    }
+    [data-theme='dark'] .gear-note{color:#9ca3af}
+
+    /* Skip link for accessibility */
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.5rem .75rem;
+      background:#fff;
+      color:var(--ink);
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      z-index:100;
+    }
+    .skip-link:focus{
+      left:1rem;
+      top:1rem;
+    }
   </style>
+
   <script>
     // theme toggle
     (function(){
       const key = 'theme';
       const saved = localStorage.getItem(key);
-      if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+      if(saved){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
       window.toggleTheme = function(){
-        const next = (document.documentElement.getAttribute('data-theme') === 'dark') ? '' : 'dark';
-        if(next){ document.documentElement.setAttribute('data-theme', next); localStorage.setItem(key, next); }
-        else { document.documentElement.removeAttribute('data-theme'); localStorage.removeItem(key); }
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? '' : 'dark';
+        if(next){
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem(key, next);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem(key);
+        }
       };
     })();
   </script>
@@ -115,25 +193,27 @@
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to main content</a>
+
   <nav class="nav" aria-label="Primary">
     <div class="wrap">
       <div class="brand"><span class="dot"></span> Jonathan Thoms</div>
       <div class="menu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#etchcentric">EtchCentric</a>
-        <a href="#keel">Keel Systems</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#top">Home</a>
+        <a href="/career.html">Career</a>
+        <a href="/keel.html">Keel Systems</a>
+        <a href="/lifestyle.html">Lifestyle</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#gear">Gear</a>
         <a href="#contact">Contact</a>
         <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
-        <button class="toggle" onclick="toggleTheme()">Light/Dark</button>
+        <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
       </div>
     </div>
   </nav>
 
-  <header>
-    <div class="avatar" style="--avatar:180px; --ringw:4px; --y:42%;">
+  <header id="top">
+    <div class="avatar">
       <div class="frame">
         <img src="assets/Portrait.png"
              srcset="assets/Portrait@2x.png 2x"
@@ -142,84 +222,171 @@
       </div>
     </div>
     <h1>Jonathan Thoms</h1>
-    <p class="sub">IT Coordinator @ Canada Fluorspar Inc. • Founder of Keel Systems & EtchCentric Creations</p>
+    <p class="sub">IT and automation specialist, small business builder, and recovering powerlifter from Newfoundland.</p>
+    <p class="sub-secondary">
+      Running IT operations at Canada Fluorspar, building Keel Systems and EtchCentric on the side,
+      and trying to keep my health stack as dialed in as my networks.
+    </p>
     <div class="btn-row" role="group" aria-label="Primary actions">
-      <a class="cta" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">View LinkedIn</a>
-      <a class="cta secondary" href="#contact">Get in touch</a>
+      <a class="cta" href="https://keel.systems" target="_blank" rel="noopener">Work with me (IT)</a>
+      <a class="cta secondary" href="#career">View my experience</a>
     </div>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
+  <main id="main">
+    <!-- Overview -->
+    <section id="overview">
+      <h2>What I do</h2>
       <p>
-        Detail-oriented, people-first IT professional based in Newfoundland. I run stable, secure infrastructure
-        and ship documented automation that removes friction for teams. I have led firewall and wireless upgrades,
-        built SharePoint and Power Automate workflows, and implemented asset tracking with a focus on clarity,
-        reliability, and maintainability.
+        Detail-focused, people-first IT professional based in Newfoundland. I run stable, secure infrastructure,
+        clean up messy environments, and ship documented automation that makes life easier for the teams using it.
       </p>
       <div>
-        <span class="pill">Infrastructure & Networking</span>
-        <span class="pill">Cybersecurity</span>
-        <span class="pill">SharePoint & Power Automate</span>
-        <span class="pill">Process Optimization</span>
-        <span class="pill">User-centered Docs</span>
+        <span class="pill">Infrastructure and networking</span>
+        <span class="pill">Cybersecurity follow through</span>
+        <span class="pill">SharePoint and Power Automate</span>
+        <span class="pill">Process and documentation</span>
+        <span class="pill">Small business IT</span>
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Professional Experience</h2>
+    <!-- Pillar cards -->
+    <section id="pillars">
+      <h2>Where everything lives on this site</h2>
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <h3>Keel Systems</h3>
+          <p>
+            My consulting practice for home labs and small businesses that need real infrastructure
+            without an enterprise-sized IT department.
+          </p>
+          <a href="#keel">Learn more about Keel Systems →</a>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Canada Fluorspar and career</h3>
+          <p>
+            My day job running IT operations at an active mine, plus earlier roles in engineering,
+            planning, and telecom.
+          </p>
+          <a href="#career">View my experience →</a>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Lifestyle and training</h3>
+          <p>
+            Powerlifting, previous fat loss work, and the systems I am rebuilding now to get back
+            under control and stay there.
+          </p>
+          <a href="#lifestyle">Read the lifestyle story →</a>
+        </article>
+
+        <article class="pillar-card">
+          <h3>Hobbies and creative</h3>
+          <p>
+            Sports fandom, magic, Kenpo Karate, and music. All the things I am trying to take more
+            seriously as an adult.
+          </p>
+          <a href="#hobbies">See what I am into →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Career -->
+    <section id="career">
+      <h2>Career and experience</h2>
+
       <div class="grid cols-2">
         <div>
-          <h3>IT Coordinator — Canada Fluorspar Inc.</h3>
-          <p><em>Nov 2024 – Present · St. Lawrence, NL</em></p>
+          <h3>IT Coordinator, Canada Fluorspar Inc.</h3>
+          <p><em>Nov 2024 to present · St. Lawrence, NL</em></p>
           <ul>
-            <li>Lead site-wide IT operations across multiple facilities to ensure stable, secure, and scalable systems.</li>
+            <li>Lead site-wide IT operations for 100+ users across multiple facilities, keeping systems stable, secure, and scalable.</li>
             <li>Manage vendor relationships and service contracts while overseeing licensing, firewalls, and escalations.</li>
             <li>Built a SharePoint-based ticketing system integrated with Teams for streamlined reporting.</li>
             <li>Implemented asset tracking for laptops, radios, and specialized equipment with audit trails.</li>
-            <li>Modernized firewalls, wireless access points, and SFP fiber links. Standardized onboarding and offboarding.</li>
+            <li>Modernized firewalls, wireless access points, and SFP fiber links, and standardized onboarding and offboarding.</li>
           </ul>
         </div>
         <div>
-          <h3>IT Technician — Canada Fluorspar Inc.</h3>
-          <p><em>Jul 2024 – Nov 2024 · St. Lawrence, NL</em></p>
+          <h3>IT Technician, Canada Fluorspar Inc.</h3>
+          <p><em>Jul 2024 to Nov 2024 · St. Lawrence, NL</em></p>
           <ul>
             <li>Provided on-site support and coordinated with external providers to maintain network integrity.</li>
-            <li>Standardized troubleshooting flows and equipment management. Partnered with HR on account lifecycle.</li>
+            <li>Standardized troubleshooting flows and equipment management and partnered with HR on account lifecycle.</li>
           </ul>
         </div>
       </div>
 
       <h3>Earlier roles</h3>
       <ul>
-        <li>Mobile Maintenance Planner; Junior and Project Engineer (CFI)</li>
-        <li>Network Technician (Bell Aliant)</li>
+        <li>Mobile Maintenance Planner; Junior and Project Engineer, Canada Fluorspar Inc.</li>
+        <li>Network Technician, Bell Aliant.</li>
       </ul>
+
+      <h3>Selected projects</h3>
+      <div class="grid cols-2">
+        <div>
+          <h4>Hosted ERP SLA redline</h4>
+          <p>Due diligence and contract work defining uptime credits, DR validation, and secure data exit standards with vendors.</p>
+        </div>
+        <div>
+          <h4>Nextcloud family cloud</h4>
+          <p>Self-hosted media and documents stack with Jellyfin and Tailscale for secure remote access.</p>
+        </div>
+        <div>
+          <h4>Cyber awareness program</h4>
+          <p>Evaluation and rollout planning for training workflows across departments.</p>
+        </div>
+        <div>
+          <h4>Asset tracker suite</h4>
+          <p>Automated equipment assignment and audits with SharePoint, Power Automate, and Teams.</p>
+        </div>
+      </div>
+
+      <h3>Skills and tools</h3>
+      <div class="grid cols-2">
+        <ul>
+          <li>Windows Server, Active Directory and Entra ID hybrid, Intune, Group Policy.</li>
+          <li>Firewall and Wi Fi planning, segmentation, and rollout.</li>
+          <li>Microsoft 365, SharePoint, Teams, Power Automate integrations.</li>
+          <li>Backup, disaster recovery, endpoint security and hardening.</li>
+        </ul>
+        <ul>
+          <li>PowerShell and Python automation and reporting.</li>
+          <li>Documentation and runbooks that real users can follow.</li>
+          <li>Project management and vendor coordination.</li>
+          <li>Small business operations and customer support.</li>
+        </ul>
+      </div>
     </section>
 
+    <!-- EtchCentric -->
     <section id="etchcentric">
       <h2>EtchCentric Creations</h2>
       <p>
-        Laser engraving and cutting studio producing custom gifts, signage, and branded products.
-        I handle creative direction, production, client relations, and marketing.
+        Laser engraving and cutting studio for custom gifts, signage, and branded products.
+        I handle creative direction, production, client relations, and marketing, and I treat it as a playground
+        for visual design and small-business process.
       </p>
       <div class="btn-row">
-        <a class="btn dark" href="https://etchcentric.square.site/" target="_blank" rel="noopener">Visit the Store</a>
+        <a class="btn dark" href="https://etchcentric.square.site/" target="_blank" rel="noopener">Visit the store</a>
         <a class="btn ghost" href="#contact">Request a custom piece</a>
       </div>
     </section>
 
+    <!-- Keel Systems -->
     <section id="keel">
       <h2>Keel Systems</h2>
       <p>
-        Personal consulting focused on home-lab architecture and small-business infrastructure.
-        I build Proxmox environments, private cloud stacks with Nextcloud and Tailscale, and automation with PowerShell and Python.
+        Keel Systems is my consulting practice focused on home labs and small businesses that want reliable,
+        understandable infrastructure instead of mystery boxes. I design stacks that you can actually support
+        after I leave.
       </p>
       <ul>
-        <li>Self-hosted cloud design and deployment with Traefik and Cloudflare Tunnels.</li>
-        <li>Network segmentation guidance, firewall policy, and secure remote access design.</li>
-        <li>Lightweight automation for media management and backup integrity.</li>
+        <li>Self-hosted cloud design with Proxmox, Nextcloud, and Jellyfin, fronted by Traefik and Cloudflare Tunnels.</li>
+        <li>Network segmentation, firewall policy, and secure remote access with tools like Tailscale.</li>
+        <li>Lightweight automation for backups, media, and reporting using PowerShell and Python.</li>
       </ul>
       <div class="btn-row">
         <a class="btn dark" href="https://keel.systems" target="_blank" rel="noopener">Visit Keel Systems</a>
@@ -227,66 +394,119 @@
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="grid cols-2">
-        <div>
-          <h3>Hosted ERP SLA Redline (2025)</h3>
-          <p>Due-diligence work defining uptime credits, DR validation, and secure data exit standards.</p>
-        </div>
-        <div>
-          <h3>Nextcloud Family Cloud</h3>
-          <p>Self-hosted media and documents with Jellyfin and Tailscale remote access.</p>
-        </div>
-        <div>
-          <h3>Cyber Awareness Program</h3>
-          <p>Evaluated and implemented training workflows across departments.</p>
-        </div>
-        <div>
-          <h3>Asset Tracker Suite</h3>
-          <p>Automated equipment assignment and audits with SharePoint, Power Automate, and Teams.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills & Tools</h2>
-      <div class="grid cols-2">
-        <ul>
-          <li>Windows Server, AD and Entra ID (Hybrid), Intune, Group Policy</li>
-          <li>Firewalls and Wi‑Fi planning, segmentation, rollout</li>
-          <li>Microsoft 365, SharePoint, Teams, Power Automate integrations</li>
-          <li>Backup, disaster recovery, endpoint security and hardening</li>
-        </ul>
-        <ul>
-          <li>PowerShell and Python automation</li>
-          <li>Documentation and runbooks tailored for users</li>
-          <li>Project management and vendor coordination</li>
-          <li>Small business operations and customer support</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email is best. I am also on LinkedIn.</p>
+    <!-- Lifestyle -->
+    <section id="lifestyle">
+      <h2>Lifestyle and training</h2>
       <p>
-        <a class="btn dark" href="mailto:jonathan@thoms.email">jonathan@thoms.email</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn Profile</a>
+        A few years ago I dropped a significant amount of weight and built my strongest powerlifting numbers
+        while working full time. Then life, stress, and priorities shifted and the habits that got me there
+        slipped away.
+      </p>
+      <p>
+        I am now rebuilding those habits with a calmer, systems-first approach: sensible nutrition, strength
+        training that fits around work and family, and routines that I can sustain rather than white-knuckle.
+        The goal is to prove to myself that I can do it again and keep it this time.
+      </p>
+      <p>
+        Longer term I would like to help regular people set up realistic training and nutrition frameworks,
+        especially those balancing demanding jobs and family. If you want to be on the radar for that work,
+        reach out and I will keep you in the loop as it takes shape.
       </p>
     </section>
 
-    <section>
-      <h2>Beyond Work</h2>
+    <!-- Hobbies -->
+    <section id="hobbies">
+      <h2>Hobbies and creative stuff</h2>
+      <h3>Sports</h3>
       <p>
-        Outside of IT, I explore laser design, music, chess, Formula 1, and Blue Jays baseball. I like building
-        automated workflows in my home lab and sharing what I learn.
+        I follow baseball, Formula 1, hockey, and football more closely than is probably healthy:
+        Toronto Blue Jays, McLaren and Oscar Piastri, the Montreal Canadiens, and the Buffalo Bills.
+        I care about the numbers and strategy as much as the highlight reels, and that sometimes spills
+        onto social media when I feel like arguing about race pace or bullpen usage.
+      </p>
+
+      <h3>Magic and martial arts</h3>
+      <p>
+        I fell in love with magic as a kid and still enjoy the mix of technique and performance that good
+        magic demands. I also have a background in Kenpo Karate and am slowly finding ways to bring structured
+        practice back into my life because it keeps my brain happier.
+      </p>
+
+      <h3>Music</h3>
+      <p>
+        Piano, guitar, and drums are my main instruments. I am not chasing a career in music, but I treat it
+        like any other skill stack: regular practice, learning from people who are better than me, and
+        occasionally recording or performing when it makes sense.
+      </p>
+
+      <h3>Why it matters</h3>
+      <p>
+        None of these are random distractions. They are examples of how I like to go deep on skills over time.
+        The same mindset that makes me obsess over a mix or a magic routine is what I bring to IT projects,
+        documentation, and coaching.
+      </p>
+    </section>
+
+    <!-- Gear teaser / affiliate-ready -->
+    <section id="gear">
+      <h2>Gear I recommend</h2>
+      <p>
+        This is a running list of tools and gadgets I actually use or would confidently buy again.
+        Some links may be affiliate links that help support my projects at no extra cost to you.
+      </p>
+      <div class="grid cols-2">
+        <div>
+          <h3>OBD II scanner</h3>
+          <p>
+            My go-to scanner for basic diagnostics and clearing codes when working on personal vehicles
+            and helping friends. Great for quick sanity checks before a shop visit.
+          </p>
+          <p>
+            <a href="javascript:void(0)" aria-disabled="true">View scanner on store →</a>
+          </p>
+        </div>
+        <div>
+          <h3>Homelab and network essentials</h3>
+          <p>
+            Routers, switches, label makers, and a few quality-of-life tools that make small network jobs
+            far less painful.
+          </p>
+          <p>
+            <a href="javascript:void(0)" aria-disabled="true">See IT and homelab gear →</a>
+          </p>
+        </div>
+        <div>
+          <h3>Lifting and recovery</h3>
+          <p>
+            Belt, straps, and simple recovery tools that survive real training instead of just looking good
+            in product photos.
+          </p>
+          <p>
+            <a href="javascript:void(0)" aria-disabled="true">See training gear →</a>
+          </p>
+        </div>
+      </div>
+      <p class="gear-note">
+        I will expand this section over time and clearly mark affiliate links as I add them.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        If you want to talk about IT, Keel Systems, training, or any of the projects on this site,
+        email is the best place to start. I am also on LinkedIn.
+      </p>
+      <p>
+        <a class="btn dark" href="mailto:jonathan@thoms.email">jonathan@thoms.email</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn profile</a>
       </p>
     </section>
   </main>
 
   <footer>
-    © 2025 Jonathan Thoms • Built with clean HTML and CSS
+    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
   </footer>
 </body>
 </html>

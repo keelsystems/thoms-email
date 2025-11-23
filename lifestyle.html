@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lifestyle & Training | Jonathan Thoms</title>
+  <meta name="description" content="How Jonathan Thoms went from 265 lb to competitive powerlifting, fell off, and is rebuilding sustainable nutrition and training for himself and his family." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thoms.email/lifestyle.html" />
+  <meta property="og:title" content="Lifestyle & Training | Jonathan Thoms" />
+  <meta property="og:description" content="From lifelong ‘big kid’ to competitive powerlifter and now a second run at sustainable training and nutrition." />
+  <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    :root{
+      --ink:#0d1b2a;
+      --ink-2:#1b263b;
+      --sky:#ccd6f6;
+      --paper:#f5f7fa;
+      --text:#2a2f36;
+      --card:#ffffff;
+      --ring: rgba(13,27,42,.15);
+      --radius:14px;
+      --shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    [data-theme='dark']{
+      --paper:#0b1220;
+      --text:#e6e9ef;
+      --card:#0f172a;
+      --ring: rgba(255,255,255,.12);
+    }
+
+    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--paper);
+      line-height:1.6;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
+    .brand a{color:#fff;text-decoration:none;}
+    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
+    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
+
+    header{
+      text-align:left;
+      padding:3rem 1rem 2.3rem;
+      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:#fff;
+    }
+
+    .hero{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--sky);
+      opacity:.9;
+    }
+
+    header h1{
+      margin:.45rem 0 .35rem;
+      font-size:clamp(1.9rem, 2.6vw + 1.2rem, 2.5rem);
+    }
+
+    header p.sub{
+      margin:0 0 .55rem;
+      max-width:650px;
+      color:#e2e8ff;
+    }
+
+    header p.sub-secondary{
+      margin:0 0 1.1rem;
+      max-width:650px;
+      font-size:.97rem;
+      color:#c7d2fe;
+    }
+
+    .hero-pills{
+      margin:.4rem 0 .9rem;
+    }
+    .pill{
+      display:inline-block;
+      background:rgba(15,23,42,.85);
+      color:#e5e7eb;
+      padding:.22rem .65rem;
+      border-radius:999px;
+      font-size:.78rem;
+      margin:.15rem .25rem .05rem 0;
+      border:1px solid rgba(148,163,184,.55);
+    }
+
+    .cta{
+      display:inline-flex;
+      gap:.6rem;
+      align-items:center;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      padding:.55rem .9rem;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 8px 16px rgba(0,0,0,.08);
+      border:1px solid transparent;
+      font-size:.9rem;
+    }
+
+    .cta.secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:none;
+    }
+
+    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
+    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
+    section h2{margin:.2rem 0 1rem; color:var(--ink)}
+    h3{margin:.6rem 0 .3rem}
+    p{margin:.2rem 0 .6rem}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+    .grid{display:grid; gap:1rem}
+    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+
+    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
+
+    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:flex-start}
+    .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
+    .btn.dark{background:var(--ink); color:#fff}
+    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.5rem .75rem;
+      background:#fff;
+      color:var(--ink);
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      z-index:100;
+    }
+    .skip-link:focus{
+      left:1rem;
+      top:1rem;
+    }
+
+    .callout{
+      font-size:.95rem;
+      padding:.85rem .9rem;
+      border-radius:12px;
+      background:#f1f5f9;
+      border:1px solid #cbd5e1;
+    }
+    [data-theme='dark'] .callout{
+      background:#020617;
+      border-color:#1f2937;
+      color:#e5e7eb;
+    }
+
+    .timeline{
+      margin:.3rem 0 .4rem;
+      padding-left:1.1rem;
+    }
+    .timeline li{
+      margin-bottom:.35rem;
+    }
+  </style>
+
+  <script>
+    (function(){
+      const key = 'theme';
+      const saved = localStorage.getItem(key);
+      if(saved){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      window.toggleTheme = function(){
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? '' : 'dark';
+        if(next){
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem(key, next);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem(key);
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="/">Jonathan Thoms</a>
+      </div>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/career.html">Career</a>
+        <a href="/keel.html">Keel Systems</a>
+        <a href="/lifestyle.html">Lifestyle</a>
+        <a href="/#hobbies">Hobbies</a>
+        <a href="/#gear">Gear</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero-kicker">Lifestyle &amp; Training</div>
+      <h1>From lifelong big kid to powerlifter, and now a second run.</h1>
+      <p class="sub">
+        I grew up as the overweight kid who could never quite make a diet stick. In university I finally cracked the code,
+        dropped the weight, and found powerlifting. Then life happened and a lot of that slipped away.
+      </p>
+      <p class="sub-secondary">
+        This page is where I write down the full story and the plan for round two. It’s for future me, my kids, and eventually
+        anyone who wants help building something sustainable for themselves.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Weight loss &amp; maintenance</span>
+        <span class="pill">Powerlifting</span>
+        <span class="pill">Nutrition &amp; macros</span>
+        <span class="pill">Real-life constraints</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2>The short version</h2>
+      <p>
+        I’ve basically always been the big kid. I played sports, I was active, and I tried to lose weight more than once,
+        but nothing ever stuck. After first year university, I hit the point where “I’ll fix it someday” wasn’t good enough.
+      </p>
+      <p>
+        Someone pointed me to Scoobie’s Workshop calorie calculator. I started counting calories properly, learned what I was
+        actually eating, and the weight came off. I went from around 265&nbsp;lb down to about 170&nbsp;lb, then moved into
+        the gym, built muscle, and ended up competing in powerlifting at different weight classes.
+      </p>
+      <p>
+        Eventually I fell off. Work, stress, family, and the usual life stuff pushed training and nutrition into the background.
+        I’ve tried a few times to get back to that level and haven’t fully nailed it yet. This page marks the point where I’m
+        drawing a line and deliberately building a version two that works with the life I have now.
+      </p>
+    </section>
+
+    <section>
+      <h2>Growing up always overweight</h2>
+      <p>
+        As a kid and teenager I was often moving: sports, walking, just being out of the house. But my default setting was still
+        “overweight.” I tried a few diets and challenges along the way, but they were always short bursts followed by a slide
+        back to normal habits.
+      </p>
+      <p>
+        The missing piece wasn’t effort. It was understanding how calories, macros, and consistency actually work, and having a
+        system that didn’t rely on motivation alone.
+      </p>
+    </section>
+
+    <section>
+      <h2>First big switch: discovering calories and lifting</h2>
+      <p>
+        After my first year of university I decided I was done feeling stuck. I found Scoobie’s Workshop, plugged in my numbers,
+        and for the first time saw a sensible daily target instead of random diet rules.
+      </p>
+      <div class="callout">
+        I tracked calories, paid attention to protein, and treated it like a problem to solve instead of a vague wish.
+        The scale started moving and it kept moving because the plan was simple and measurable.
+      </div>
+      <p>
+        Over time I dropped from roughly 265&nbsp;lb down to around 170&nbsp;lb. Once I realized I could actually change my body,
+        I leaned into strength training and started spending serious time under the bar instead of just treating the gym as
+        a place to burn calories.
+      </p>
+    </section>
+
+    <section>
+      <h2>From weight loss to powerlifting</h2>
+      <p>
+        After getting lean, I shifted into building strength and muscle. That meant eating more on purpose, tracking things,
+        and accepting that the scale going up wasn’t automatically a bad thing. Powerlifting became the way to channel that
+        energy into something concrete.
+      </p>
+      <ul class="timeline">
+        <li><strong>Bulk to ~200&nbsp;lb</strong> and build a base of strength.</li>
+        <li><strong>Cut to ~163&nbsp;lb</strong> for a first powerlifting meet.</li>
+        <li><strong>Bulk to ~183&nbsp;lb</strong> and compete again at nationals.</li>
+        <li><strong>Bulk to ~205&nbsp;lb</strong> for another run at provincials.</li>
+      </ul>
+      <p>
+        During that stretch I wasn’t just following a program. I was deep into the details: supplements, macros,
+        micronutrients, recovery, and programming. If I had taken a slightly different path, I could easily have ended up as a
+        personal trainer or strength coach.
+      </p>
+    </section>
+
+    <section>
+      <h2>Falling off and real life</h2>
+      <p>
+        At some point, the graph reversed. Work got heavier, responsibilities stacked up, and training became the thing that
+        moved to “tomorrow” more often than not. Nutrition followed. None of it happened overnight; it was a slow drift away
+        from the habits that had worked so well.
+      </p>
+      <p>
+        I’ve taken a few runs at getting back to that competition-ready version of myself, but trying to copy-paste old
+        routines onto a new life hasn’t worked. Different job, different schedule, and now kids in the picture mean the
+        approach has to change too.
+      </p>
+    </section>
+
+    <section>
+      <h2>Round two: doing it again, differently</h2>
+      <p>
+        For my own health and for my kids, it’s time to flip the switch again. The goal this time isn’t to recreate the exact
+        numbers from my old meets. The goal is to build a sustainable system that keeps me strong, mobile, and in a body
+        I’m proud of while still being present at home and at work.
+      </p>
+      <p>
+        The good news: I already know what works. I understand calories, macros, training progression, and recovery. I know how
+        to write a realistic plan and how to run it. The work now is about consistency and fitting that plan into the version
+        of life I’m living today.
+      </p>
+      <p>
+        I’ll use this page as a place to keep my principles and high-level plan visible so I’m accountable to something more
+        permanent than a note on my phone.
+      </p>
+    </section>
+
+    <section>
+      <h2>Helping other people, once I’ve proved it again</h2>
+      <p>
+        I’m not putting myself out there as a coach while I’m still rebuilding. First I want to demonstrate, again, that I can
+        take myself from “fell off” back to strong, healthy, and consistent. Once I’ve done that, I’d like to open up some
+        one-on-one capacity for regular people who want realistic training and nutrition help.
+      </p>
+      <p>
+        That would likely look like straightforward, habit-first coaching: strength programs, simple nutrition targets, and
+        check-ins that fit around real jobs and family life instead of pretending everyone lives in a gym.
+      </p>
+      <div class="btn-row">
+        <a class="btn dark" href="mailto:jonathan@thoms.email?subject=Lifestyle%20%2F%20coaching%20interest">
+          Get on my radar for coaching
+        </a>
+        <a class="btn ghost" href="/#contact">General contact</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+  </footer>
+</body>
+</html>
