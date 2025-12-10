@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Career Story | Jonathan Thoms</title>
+  <meta name="description" content="An honest, long-form story of how I went from student engineer and mining roles to IT coordinator and independent consultant, and the thread that ties it all together." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thoms.email/career-story.html" />
+  <meta property="og:title" content="My Career Story | Jonathan Thoms" />
+  <meta property="og:description" content="Autobiographical look at my path through engineering, mining, and IT, and what I learned along the way." />
+  <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="image" href="assets/Portrait.png" />
+
+  <style>
+    :root{
+      --ink:#0d1b2a;
+      --ink-2:#1b263b;
+      --sky:#ccd6f6;
+      --paper:#f5f7fa;
+      --text:#2a2f36;
+      --card:#ffffff;
+      --ring: rgba(13,27,42,.15);
+      --radius:14px;
+      --shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    [data-theme='dark']{
+      --paper:#0b1220;
+      --text:#e6e9ef;
+      --card:#0f172a;
+      --ring: rgba(255,255,255,.12);
+    }
+
+    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--paper);
+      line-height:1.6;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
+    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
+    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
+
+    header{
+      text-align:left;
+      padding:3rem 1rem 2.3rem;
+      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:#fff;
+    }
+
+    .hero{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--sky);
+      opacity:.9;
+    }
+
+    header h1{
+      margin:.45rem 0 .35rem;
+      font-size:clamp(1.9rem, 2.6vw + 1.2rem, 2.5rem);
+    }
+
+    header p.sub{
+      margin:0 0 .55rem;
+      max-width:650px;
+      color:#e2e8ff;
+    }
+
+    header p.sub-secondary{
+      margin:0 0 1.1rem;
+      max-width:650px;
+      font-size:.97rem;
+      color:#c7d2fe;
+    }
+
+    .cta{
+      display:inline-flex;
+      gap:.6rem;
+      align-items:center;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      padding:.55rem .9rem;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 8px 16px rgba(0,0,0,.08);
+      border:1px solid transparent;
+      font-size:.9rem;
+    }
+
+    .cta.secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:none;
+    }
+
+    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
+    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
+    section h2{margin:.2rem 0 1rem; color:var(--ink)}
+    h3{margin:.6rem 0 .3rem}
+    h4{margin:.4rem 0 .25rem}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+    .grid{display:grid; gap:1rem}
+    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+
+    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
+
+    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center}
+    header .btn-row{justify-content:flex-start;}
+    .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
+    .btn.dark{background:var(--ink); color:#fff}
+    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.5rem .75rem;
+      background:#fff;
+      color:var(--ink);
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      z-index:100;
+    }
+    .skip-link:focus{
+      left:1rem;
+      top:1rem;
+    }
+  </style>
+
+  <script>
+    (function(){
+      const key = 'theme';
+      const saved = localStorage.getItem(key);
+      if(saved){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      window.toggleTheme = function(){
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? '' : 'dark';
+        if(next){
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem(key, next);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem(key);
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="/" style="color:#fff;text-decoration:none;">Jonathan Thoms</a>
+      </div>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/career.html">Career</a>
+        <a href="/keel.html">Keel Systems</a>
+        <a href="/lifestyle.html">Lifestyle</a>
+        <a href="/#hobbies">Hobbies</a>
+        <a href="/#gear">Gear</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero-kicker">Career</div>
+      <h1>My Career Story</h1>
+      <p class="sub">
+        A long-form, autobiographical look at how I went from student engineer and mining roles to IT coordinator and consultant.
+      </p>
+      <p class="sub-secondary">
+        If the main career page is the highlight reel, this is the director&apos;s cut. It&apos;s for people who like seeing the messy middle and the lessons learned along the way.
+      </p>
+      <div class="btn-row">
+        <a class="cta" href="mailto:jonathan@thoms.email">Email me</a>
+        <a class="cta secondary" href="/career.html">Back to career overview</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Some careers are a straight line. Mine is more of a zigzag: cardboard prototypes and 3D printers, ice cream machines and mine tailings, blast designs and SAP work orders, ransomware recovery and firewalls.
+      </p>
+      <p>
+        The common thread is simple enough. I keep getting dropped into messy, real-world problems, and I keep finding ways to understand them, put structure around them, and leave things better than I found them.
+      </p>
+    </section>
+
+    <section>
+      <h2>Early years: engineering, telecom, and Dairy Queen</h2>
+
+      <h3>Industrial Outreach Group</h3>
+      <p>
+        My career story starts in 2013 with the Industrial Outreach Group, a Memorial University engineering initiative that paired engineering co-op students with local small and medium businesses. The idea was simple: give students real projects and give local companies access to practical engineering help.
+      </p>
+      <p>
+        During that work term, I got my first taste of what it meant to turn ideas into real, physical solutions. I used SolidWorks to build 3D CAD models that we fed into a 3D printer, hosted meetings with clients to clarify expectations, and learned how to translate “we kind of want this thing” into actual engineering requirements. One of the projects that stuck with me was designing a device to help a client with a mobility issue wash their hair more independently. It was the first time I saw how engineering could make someone&apos;s day-to-day life meaningfully easier.
+      </p>
+      <p>
+        Another project involved examining a taser-type device and drafting a formal statement explaining why, based on its specifications, it met the definition of an illegal weapon in Newfoundland and Labrador. I also helped finalize a bottle and can crusher concept for EverGreen, prototyping the angle and flow using simple cardboard setups before we committed to a full build with 80/20 fabricated metal beams. I learned what McMaster-Carr was, how to source components properly, and how many details go into something as “simple” as a small machine.
+      </p>
+      <p>
+        We used a laser cutter to design and fabricate a case for an electronic circuit board. I collaborated with other students on their projects and got pulled into an incident investigation where people initially tried to blame a supposed “faulty wiring” job on a chocolate coating machine for a fire in the engineering building. The investigation ultimately pointed elsewhere, but it was my first exposure to how important documentation, facts, and calm problem solving are when things literally catch fire.
+      </p>
+      <p>
+        It was also my first exposure to workplace friction. I had my own internal reactions to how a colleague carried himself and handled conflict, and I learned the hard way that misaligned expectations, poor communication, and unspoken resentments can make collaboration painful. At the time, I mostly just knew it did not sit right with me. Later in my career, I would recognize those situations as culture and communication problems, not just “someone being difficult.”
+      </p>
+
+      <h3>Network Technician at Bell</h3>
+      <p>
+        My next stop was with Bell as a Network Technician. The work itself was fairly straightforward: show up in the morning, check the system to see what jobs were queued, print them, and get to work. When technicians called in from the field, we supported them as needed, often working off notes from the system that tried, with mixed success, to predict expected call volumes.
+      </p>
+      <p>
+        A lot of it was hands-on wiring work, punching down communication wires in large racks for POTS lines. It was not glamorous, but it was a solid introduction to telecom, process, and the idea that infrastructure reliability is built one small, consistent action at a time.
+      </p>
+
+      <h3>Junior Project Engineer at Pennecon M&amp;M (Co-op)</h3>
+      <p>
+        My next two work terms were with Pennecon M&amp;M in their engineering division as a Junior Project Engineer. This is where I first saw what a well-structured project environment looks like. Engineers did engineering work. Clerks handled clerical work. Operations had clear roles. The machine was not perfect, but it ran.
+      </p>
+      <p>
+        I learned how to bid on RFPs using internal systems, build cost estimates that included labor, insurance, equipment, and other job costs, and put together full proposal packages. I spent time at the Long Harbour Processing Plant on each term, building work packs for field crews, creating and responding to Requests for Information, handling change requests, and doing cost tracking on top of a mix of field engineering and supporting the senior project engineers.
+      </p>
+      <p>
+        Looking back, that experience quietly set my expectations for how organized and professional a project environment could be. Later roles would show me the opposite side of that spectrum.
+      </p>
+
+      <h3>Working With My Hands</h3>
+      <p>
+        Around this time, I also did a small stint working as an electrical apprentice with my father. We installed heat pump units for customers and I gained a better appreciation for trades work, attention to detail, and the difference between “looks fine” and “actually done right.”
+      </p>
+
+      <h3>Humbling Reality Check at Dairy Queen</h3>
+      <p>
+        After finishing my Mechanical Engineering degree, I did not want to move back home. I applied for every job I could find. A lot of places looked at my resume and passed without even a callback. Walmart, Costco, Dairy Queen. Nothing at first.
+      </p>
+      <p>
+        Eventually, Dairy Queen circled back and asked if I was still available. I was hired as Chill Crew, which meant operating the till and making ice cream.
+      </p>
+      <p>
+        The job itself was simple, but the experience was not. I struggled with the management style and felt frustrated by how some situations were handled. One customer interaction in particular, involving a dispute over being overcharged, escalated to a point that pushed me past a breaking point. That was a turning point for me in understanding my own limits and how deeply disrespect and miscommunication can hit when you are already stretched thin.
+      </p>
+      <p>
+        When I eventually found a new opportunity and gave my two weeks&apos; notice, I was not scheduled for a single shift. Then, for the first few days of that “notice period,” they reached out repeatedly asking me to come in because they were understaffed. I chose not to go back. It was my first real lesson that not every employer will respect your boundaries or your effort, no matter how hard you are trying.
+      </p>
+    </section>
+
+    <section>
+      <h2>Years at Canada Fluorspar</h2>
+
+      <h3>QA/QC Civil Inspector</h3>
+      <p>
+        My next major chapter began when I joined Canada Fluorspar Inc. as a QA/QC Civil Inspector at the St. Lawrence fluorspar mine. My work focused on the tailings management facility. I performed wet and dry sieve particle size analysis, Proctor compaction tests, specific gravity checks, water replacement testing, and QA/QC oversight on material placement.
+      </p>
+      <p>
+        On any given day, I might be doing lab tests one minute and standing in heavy fog around large mobile equipment the next, trying to ensure that what was designed on paper was actually being built correctly in the field. Balancing the volume of lab work with field monitoring was challenging. I also documented site conditions and provided clear, informative handover reports for day shift supervision.
+      </p>
+      <p>
+        Between Phase 1 and Phase 2 of construction, a project manager specifically requested me back for the second phase. HR initially blocked this because I had been flagged as going home too often during shifts. In reality, this had been discussed with the project engineer. We needed a tabletop burner to perform specific gravity testing, we did not have one on site, and my crossover lived about thirty minutes away, so the testing fell to me off site. No one had ever raised that concern directly with me.
+      </p>
+      <p>
+        After a frank conversation where I explained the context, the misunderstanding was cleared up and I was brought back for Phase 2. That moment stuck with me. I later learned that the flag had quietly affected earlier applications I had submitted, which explained the silence on several roles I had applied for. The new project manager had been told my name when they were looking for someone to handle QA/QC and wanted me to start on Monday. HR stepped in and insisted on a formal interview first. It was another early lesson in how much communication and context matter, and how easily a gap in both can derail someone&apos;s path.
+      </p>
+
+      <h3>Junior Project Engineer</h3>
+      <p>
+        As time went on, my background and the company&apos;s needs aligned and I transitioned into a Junior Project Engineer role, helping manage and organize several dozen capital projects. There were far more projects than our small team should reasonably have been covering, and I quickly learned what it felt like to be stretched beyond sustainable capacity.
+      </p>
+      <p>
+        I maintained weekly updates for stakeholders, kept Gantt charts current in MS Project, and tried to inject structure into a chaotic environment.
+      </p>
+      <p>
+        One of my biggest wins in this role was a project to repurpose a pump to supply the mill with water using an old mine shaft. I did the hydraulic calculations, selected equipment, and worked with suppliers on a steel frame to suspend the pump in the shaft, paired with an electrical hoist and an e-house. I designed a perimeter fence, transitioned the outlet from 8-inch rigid to 8-inch flexible pipe and then into a 12-inch HDPE pipeline with welded connections, and built a 3D CAD model of the site using survey data. When the system was finally commissioned, the flow rates lined up with my initial calculations. That felt good.
+      </p>
+      <p>
+        Another highlight was designing and preparing the drawings for an access road from the main mine site to the port. I provided drill patterns for blasting and collaborated with surveyors to make sure what was on paper matched the reality of the terrain.
+      </p>
+      <p>
+        At the same time, I struggled with what I saw as a pattern of short-term, cost-driven decisions that did not fully respect local conditions or long-term operational realities. Some designs, in my opinion, were not properly adapted to Newfoundland&apos;s high winds and harsh winters. There were projects where the team tried to flag risks, for example recommending proven, more robust storage solutions over cheaper, lighter options, and then watched those warnings play out exactly as feared when structures failed under wind loads.
+      </p>
+      <p>
+        I also found myself navigating uncomfortable ethical and quality situations, from questionable cost saving measures to workarounds that did not align with the standards I believed we should be upholding. Those experiences taught me as much about what kind of engineer and leader I did not want to be as they did about technical design.
+      </p>
+
+      <h3>Junior Mining Engineer</h3>
+      <p>
+        Later, I moved into a Junior Mining Engineer role, which was one of the most technically satisfying positions I have held. I took a short course on Surpac and then dove into mine planning tasks: working with block models, optimizing pit designs, estimating yields, calculating stockpile volumes, and reporting on total volume blasted and mined.
+      </p>
+      <p>
+        I helped design blasts, plotted blast radii and other maps, and supported operational KPIs. I also learned how to set up and run simulator training sessions for haul truck and excavator operators. It was a great mix of data, modeling, and real-world impact.
+      </p>
+
+      <h3>Mobile Maintenance Planner</h3>
+      <p>
+        My next role at CFI was as a Mobile Maintenance Planner. I planned scheduled maintenance for mobile equipment based on hours, utilization, and other factors. I prepared weekly maintenance schedules, attached operator-reported work orders from our ERP system, staged filters, and coordinated with the warehouse to ensure we had the parts needed to execute preventative maintenance properly.
+      </p>
+      <p>
+        This role gave me a deeper appreciation for asset management and how preventative maintenance directly affects uptime, safety, and cost. I was proud of the improvements we saw in KPIs over a relatively short period, even though I often felt that the level of detail and scrutiny applied to my area exceeded that applied elsewhere in the operation.
+      </p>
+      <p>
+        This chapter ended abruptly when the company went into receivership. I was told I “had no work to do” on a particular Monday. Shortly after, my son had been born and airlifted to the NICU. I was four hours away at the hospital when I was instructed to arrange a trip to site to collect my belongings. There was no real acknowledgement of what was going on in my personal life. It left a lasting impression on how quickly loyalty can be discarded when a company is collapsing.
+      </p>
+      <p>
+        Around the same time, someone from outside the company reached out, trying to scoop up laid-off CFI talent and relate to my situation by talking about sleeping on a pull-out chair in the hospital when their own child was in care. The intent might have been good, but it landed poorly. My experience at the NICU was still raw, and I was not ready to jump into something new with someone I had just met. I declined to pursue those opportunities.
+      </p>
+    </section>
+
+    <section>
+      <h2>Switching into IT</h2>
+
+      <h3>Starting a Small Business</h3>
+      <p>
+        Between roles, I bought a 40 W diode laser and started a small business doing custom laser engraving. I took on custom projects and did a craft fair. It was not a huge operation, but it scratched both the technical and creative itch and showed me that I could build something of my own from scratch.
+      </p>
+
+      <h3>IT Technician</h3>
+      <p>
+        There is a bit of irony in the fact that I originally chose Mechanical Engineering over Computer Engineering because I was not confident I would survive the academic side of computer engineering, even though I was more interested in tech. Eventually, I found myself in IT anyway.
+      </p>
+      <p>
+        I started as an IT Technician. Initially, it was basic physical troubleshooting and “hands on the box” work. As our managed service provider struggled to meet expectations and SLAs, I gradually took over more and more of the day-to-day tasks.
+      </p>
+      <p>
+        I started creating accounts in Active Directory and Microsoft 365, setting up VPNs, deploying and configuring new workstations, and fixing printers and plotters. Over time, I was not just “the hands on site,” I was effectively running a big chunk of the IT environment.
+      </p>
+
+      <h3>IT Coordinator and a Ransomware Recovery</h3>
+      <p>
+        After I had been handling most of the daily IT tasks for a while, my title was changed to IT Coordinator. By then, I was deeply embedded in the infrastructure and operations.
+      </p>
+      <p>
+        The environment I inherited had significant issues: weak password policies, outdated firewalls, switches, and servers, and almost no real patch management. Our previous MSP had left a lot undone. At one point, a firewall issue left us effectively throttled for most of a month while we struggled to get clear answers or effective support. It drove home how risky it is to outsource critical knowledge without proper oversight.
+      </p>
+      <p>
+        During the transition, I was given Domain Admin access. One evening, while running PowerShell scripts, I accidentally locked both my admin and regular accounts. I opened a ticket, explained exactly what I thought had happened, and even suggested the fix. After about four hours of Level 3 troubleshooting, the MSP could not resolve it and simply created new accounts for me. The next morning I used those new accounts to apply the solution I had originally proposed, which resolved the issue. That experience shifted my mindset from “I am the hands” to “I actually understand this environment as well as, or better than, some of the people supposedly supporting it.”
+      </p>
+      <p>
+        We eventually brought in a new MSP, and they performed a full IT systems analysis. We chose to replace our aging WatchGuard T70 Firebox with PA-440 firewalls. Before other hardening measures were implemented, we were hit with Akira ransomware.
+      </p>
+      <p>
+        The recovery was intense. I participated in capturing forensic images for analysis, wiping and rebuilding over sixty endpoints, and learning a tremendous amount about our hosts and servers in a very short period. Afterward, we implemented ConnectWise ScreenConnect for remote support, deployed SentinelOne, and I drafted IT policies aimed at closing the gaps that had left us exposed. I pushed through a stronger password policy, cleaned up Active Directory, and resolved issues like outdated TLS on internal email forwarding systems that had already been deprecated.
+      </p>
+      <p>
+        It was the kind of work I thrive in: high impact, technically challenging, and meaningful. I could see the before and after. I could measure the improvements. It made me seriously consider that IT, not traditional engineering, might be where I am meant to focus long term.
+      </p>
+
+      <h3>Why I Left</h3>
+      <p>
+        For as much as I enjoyed the technical work and the sense of purpose, the role slowly became unsustainable. Scope creep turned “IT Coordinator” into “catch all for anything even vaguely technology-adjacent.” I was doing the IT budget, implementing an LMS, designing a white-box server to serve as a server refresh after a proposed cloud solution was rejected on cost and replaced with a cheaper VPS, and setting up and implementing an AI dash cam solution from GoMotive.
+      </p>
+      <p>
+        I was also handling social media and Indeed job postings, full SharePoint administration and permissions management (even when site owners were assigned), and creating an automated workflow that emailed raw data and produced daily and monthly Excel reports from our Kantech Enterprise security access system. On top of that, I owned Microsoft and Adobe licensing, ordered and set up all computer equipment, patched all servers, and created an IT ticketing system with automation and workflows using the Microsoft stack. I did all of this while providing Tier 3, Tier 2, and Tier 1 help desk support for the rest of the company.
+      </p>
+      <p>
+        Some peers treated me disrespectfully, raising minor issues in exaggerated ways instead of simply communicating like adults or using normal channels such as Teams. I was the “IT guy” to everyone, and very few people had a clear view of the sheer volume and complexity of the work I was juggling.
+      </p>
+      <p>
+        One example: I was accused of not responding after “several attempts” to reach me about how to submit a ticket. In reality, there had been one email sent after business hours on a Monday, followed by a call to my supervisor on Wednesday escalating the matter. Another time, someone came to my door and barked demands at me in a way that felt more like shouting at a dog than speaking to a colleague.
+      </p>
+      <p>
+        Layer that on top of my own challenges navigating neurodivergence, a rejected pay raise request with no feedback, and almost zero flexibility around childcare despite my partner returning to work, and it added up. I had given a lot: time, energy, ideas, and emotional bandwidth. I risked burning out and damaging my family life in the process.
+      </p>
+      <p>
+        When I finally handed in my resignation, there was no real attempt to ask what it would take to keep me. No counteroffer. No serious conversation about workload, boundaries, or recognition. As painful as that was, it also confirmed that leaving was the right choice.
+      </p>
+    </section>
+
+    <section>
+      <h2>What it all adds up to</h2>
+      <p>
+        On paper, this story looks like a series of sharp turns: student engineer, ice cream worker, civil inspector, project engineer, mining engineer, maintenance planner, laser engraving small business owner, and finally IT coordinator rebuilding systems after a ransomware attack.
+      </p>
+      <p>
+        The pattern underneath is that I keep being drawn to the same kinds of work. I like untangling messy systems, turning vague problems into concrete plans, and building structures that actually work for the people who have to live with them. I care about doing things the right way, not just the fast or cheap way, and I care about environments where respect, communication, and sustainability are part of the job, not an afterthought.
+      </p>
+      <p>
+        If there is a TL;DR for my career so far, it is this: I am at my best when you drop me into something complicated, let me understand it end to end, and give me enough trust and autonomy to fix it properly, in a way that makes life better for the people who rely on it.
+      </p>
+      <div class="btn-row">
+        <a class="btn dark" href="mailto:jonathan@thoms.email">Work with me</a>
+        <a class="btn ghost" href="/keel.html">Learn more about Keel Systems</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+  </footer>
+</body>
+</html>
