@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Interview Questions &amp; Answers | Jonathan Thoms</title>
+  <meta name="description" content="Common interview questions and the answers I typically give about my experience, strengths, and how I work." />
+  <meta name="author" content="Jonathan Thoms" />
+  <link rel="canonical" href="https://thoms.email/interview-qa.html" />
+  <meta property="og:title" content="Common Interview Questions &amp; Answers | Jonathan Thoms" />
+  <meta property="og:description" content="A long-form Q&A you can use to get a feel for how I think, work, and approach problems." />
+  <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" href="/favicon.svg" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" as="image" href="assets/Portrait.png" />
+
+  <style>
+    :root{
+      --ink:#0d1b2a;
+      --ink-2:#1b263b;
+      --sky:#ccd6f6;
+      --paper:#f5f7fa;
+      --text:#2a2f36;
+      --card:#ffffff;
+      --ring: rgba(13,27,42,.15);
+      --radius:14px;
+      --shadow: 0 6px 18px rgba(0,0,0,.07);
+    }
+    [data-theme='dark']{
+      --paper:#0b1220;
+      --text:#e6e9ef;
+      --card:#0f172a;
+      --ring: rgba(255,255,255,.12);
+    }
+
+    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:var(--paper);
+      line-height:1.6;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
+    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
+    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
+    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
+    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
+
+    header{
+      text-align:left;
+      padding:3rem 1rem 2.3rem;
+      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      color:#fff;
+    }
+
+    .hero{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .hero-kicker{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.72rem;
+      color:var(--sky);
+      opacity:.9;
+    }
+
+    header h1{
+      margin:.45rem 0 .35rem;
+      font-size:clamp(1.9rem, 2.6vw + 1.2rem, 2.5rem);
+    }
+
+    header p.sub{
+      margin:0 0 .55rem;
+      max-width:650px;
+      color:#e2e8ff;
+    }
+
+    header p.sub-secondary{
+      margin:0 0 1.1rem;
+      max-width:650px;
+      font-size:.97rem;
+      color:#c7d2fe;
+    }
+
+    .cta{
+      display:inline-flex;
+      gap:.6rem;
+      align-items:center;
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      padding:.55rem .9rem;
+      border-radius:10px;
+      font-weight:600;
+      box-shadow:0 8px 16px rgba(0,0,0,.08);
+      border:1px solid transparent;
+      font-size:.9rem;
+    }
+
+    .cta.secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.25);
+      box-shadow:none;
+    }
+
+    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
+    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
+    section h2{margin:.2rem 0 1rem; color:var(--ink)}
+    h3{margin:1rem 0 .3rem}
+    h4{margin:.4rem 0 .25rem}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+    .grid{display:grid; gap:1rem}
+    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+
+    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:0;
+      padding:.5rem .75rem;
+      background:#fff;
+      color:var(--ink);
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      z-index:100;
+    }
+    .skip-link:focus{
+      left:1rem;
+      top:1rem;
+    }
+
+    .qa-meta{
+      font-size:.9rem;
+      color:#6b7280;
+      margin-bottom:.6rem;
+    }
+
+    .qa-section + .qa-section{
+      margin-top:1.5rem;
+      padding-top:1.2rem;
+      border-top:1px solid rgba(148,163,184,.4);
+    }
+  </style>
+
+  <script>
+    (function(){
+      const key = 'theme';
+      const saved = localStorage.getItem(key);
+      if(saved){
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+      window.toggleTheme = function(){
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? '' : 'dark';
+        if(next){
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem(key, next);
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.removeItem(key);
+        }
+      };
+    })();
+  </script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="wrap">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="/" style="color:#fff;text-decoration:none;">Jonathan Thoms</a>
+      </div>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/career.html">Career</a>
+        <a href="/career-story.html">Career Story</a>
+        <a href="/keel.html">Keel Systems</a>
+        <a href="/lifestyle.html">Lifestyle</a>
+        <a href="/#hobbies">Hobbies</a>
+        <a href="/#gear">Gear</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero-kicker">Career</div>
+      <h1>Common Interview Questions &amp; Answers</h1>
+      <p class="sub">
+        This page collects the questions I&apos;m most often asked in interviews and conversations, along with the answers that best reflect how I think and work.
+      </p>
+      <p class="sub-secondary">
+        If you&apos;re preparing to talk with me, feel free to treat this as an open-notes preview. If you&apos;re just curious about how I approach my work, this is a good place to start.
+      </p>
+      <div class="btn-row">
+        <a class="cta" href="mailto:jonathan@thoms.email">Email me</a>
+        <a class="cta secondary" href="/career.html">Back to career overview</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section>
+      <h2>General background</h2>
+
+      <div class="qa-section">
+        <h3>1. Tell me about yourself.</h3>
+        <p>
+          I&apos;m a mechanical engineer by education who ended up spending most of my career in mining, maintenance, and now IT. The common thread is that I keep getting dropped into messy systems and environments, and my instinct is to map out what&apos;s actually happening, put structure around it, and leave things better than I found them.
+        </p>
+        <p>
+          I&apos;ve worked as a QA/QC civil inspector, junior project engineer, junior mining engineer, and mobile maintenance planner at a fluorspar mine, then moved into IT technician and IT coordinator roles where I owned everything from help desk to firewalls, backups, and recovery from a ransomware incident. Along the way I started small side businesses in laser engraving and consulting.
+        </p>
+        <p>
+          These days, I&apos;m focused on practical IT and workflow design: understanding how people really work day-to-day, not just how the process map says they work, and then building infrastructure, automation, and documentation that supports that reality instead of fighting it.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>2. Walk me through your career path.</h3>
+        <p>
+          My career started with engineering co-op roles at the Industrial Outreach Group and Pennecon M&amp;M, where I was doing CAD, prototyping, and supporting industrial projects. After graduating in mechanical engineering, the job market nudged me through some humbling steps, including a stint at Dairy Queen, before I landed at Canada Fluorspar.
+        </p>
+        <p>
+          At CFI, I moved through several roles. I started as a QA/QC civil inspector on the tailings management facility, then transitioned into junior project engineering, where I led or supported a range of capital projects. From there, I became a junior mining engineer working with planning, blast design, and KPIs, and later a mobile maintenance planner responsible for preventative maintenance on a mixed fleet.
+        </p>
+        <p>
+          Over time I gravitated toward the systems side of things. I was already doing a lot of problem-solving and process work, so shifting into IT made sense. I became the on-site IT technician and eventually the IT coordinator, responsible for servers, endpoints, networking, security tools, and post-incident recovery after a ransomware attack. Now I&apos;m channeling all of that into IT consulting and workflow design under my own banner.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>3. Why did you move from engineering and mining into IT?</h3>
+        <p>
+          Two reasons. First, the work I enjoyed most in engineering and mining was always systems work: understanding how information flowed, how tools were used, and where processes were breaking down. Second, I&apos;ve always been drawn to technology, even if I originally chose mechanical over computer engineering for academic reasons.
+        </p>
+        <p>
+          When I started unofficially taking over day-to-day IT tasks from an MSP, I realized the same mindset I used on the engineering side applied perfectly: map the system, find the failure points, and design something that&apos;s robust and understandable. After the ransomware incident, I was fully immersed in infrastructure and security. At that point, it was obvious that IT wasn&apos;t just a side responsibility anymore; it was the center of the work I wanted to be doing.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects, problems, and crisis work</h2>
+
+      <div class="qa-section">
+        <h3>4. What kinds of problems do you like solving?</h3>
+        <p>
+          I like problems that are messy enough that nobody has a clear picture, important enough that fixing them actually changes daily life for people, and constrained enough that we have to be smart with cost and complexity.
+        </p>
+        <p>
+          That could be a mill water supply system using an old mine shaft, a maintenance plan for a mobile fleet that keeps breaking down, or an IT environment with poor patching and weak password policies that just got hit by ransomware.
+        </p>
+        <p>
+          I enjoy getting end-to-end visibility, translating what I see into plain language for non-technical stakeholders, and then building a solution that people can support and maintain without needing a full-time babysitter.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>5. Tell me about a project you&apos;re particularly proud of.</h3>
+        <p>
+          The repurposed pump project at the mine is one I still think about. We needed to supply the mill with water using an old mine shaft. I did the hydraulic calculations, selected the pump, worked with suppliers on a steel frame to suspend it in the shaft, and coordinated the e-house, hoist, fencing, and HDPE pipeline from 8-inch rigid to 8-inch flexible to 12-inch welded.
+        </p>
+        <p>
+          I also built a 3D CAD model using survey data, so we had an accurate representation of the layout before committing to construction. When the system went live, the achieved flow rates aligned with my initial calculations. It was a good example of combining design, vendor coordination, and field reality into something that worked exactly how it was supposed to.
+        </p>
+        <p>
+          On the IT side, I&apos;m proud of the work we did post-ransomware: rebuilding over sixty endpoints, hardening the environment, pushing better policies, and using that painful event as a springboard to a more secure and manageable system.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>6. Tell me about a time you led through a crisis.</h3>
+        <p>
+          The Akira ransomware incident is the clearest example. We went from “normal but fragile” operations to a situation where systems were encrypted, people were anxious, and a lot of hidden weaknesses were suddenly very visible.
+        </p>
+        <p>
+          My role was part technical, part communication. On the technical side, I helped capture forensic images, wiped and rebuilt machines, audited servers, and participated in reconfiguring things like remote access, endpoint protection, and patching. On the communication side, I explained what was happening in plain language, helped set priorities for what came back first and why, and made sure we weren&apos;t just rushing back to “how it was before.”
+        </p>
+        <p>
+          What I&apos;m proud of is that we didn&apos;t just restore from backups and move on. We used the opportunity to clean up Active Directory, improve password policies, fix TLS and legacy email issues, and bring in better tooling. It was a crisis, but it also became a turning point.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Working with people</h2>
+
+      <div class="qa-section">
+        <h3>7. How do you handle difficult stakeholders or conflict?</h3>
+        <p>
+          I try to start from clarity and curiosity. If someone is upset, there&apos;s usually a reason behind it, even if the way they&apos;re expressing it is not ideal. I ask questions to understand what they actually need, separate facts from emotion, and then reflect back what I&apos;ve heard so they know I&apos;m not just waiting to talk.
+        </p>
+        <p>
+          At the same time, I&apos;ve learned from experience that there are lines that shouldn&apos;t be crossed. I can work with frustration and urgency, but I don&apos;t think it&apos;s acceptable to yell at people, use personal attacks, or escalate minor issues without even attempting normal communication first. In my last role, I had situations where people went straight to my supervisor with exaggerated complaints instead of just talking to me. That taught me to be very clear about the communication channels I expect people to use and the behavior I&apos;ll accept.
+        </p>
+        <p>
+          So my approach is: understand, de-escalate, solve what can be solved, and set boundaries when behavior becomes disrespectful or unsustainable.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>8. What are your strengths?</h3>
+        <p>
+          Two big ones stand out.
+        </p>
+        <p>
+          First, systems thinking with practical execution. I can see how pieces connect across engineering, operations, and IT, and then turn that understanding into concrete projects, documentation, and workflows. I&apos;m comfortable at the whiteboard and at the keyboard.
+        </p>
+        <p>
+          Second, translation between technical and non-technical worlds. I can talk to operators, managers, vendors, and technical specialists and make sure everyone is aligned on what we&apos;re doing and why. I don&apos;t hide behind jargon, and I like making complex things understandable without dumbing them down.
+        </p>
+        <p>
+          I&apos;d also add persistence. Whether it&apos;s CAD models, blast designs, or debugging an IT incident, I don&apos;t give up quickly and I&apos;m not afraid to dig into details until the problem actually makes sense.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>9. What&apos;s a weakness or something you&apos;re working on?</h3>
+        <p>
+          Historically, I&apos;ve had a tendency to take on too much because I can see what needs to be done and I care about doing it right. That often makes me the person people go to “because I&apos;ll figure it out,” which is flattering but can be unhealthy if there&apos;s no limit.
+        </p>
+        <p>
+          I&apos;ve been working on being more explicit about capacity and prioritization: documenting what&apos;s already on my plate, making tradeoffs visible, and asking leadership to choose what matters most instead of silently absorbing everything. I&apos;m also learning to delegate or say “not yet” when something would compromise more critical work.
+        </p>
+        <p>
+          So the weakness is over-responsibility. The improvement is putting structure and boundaries around that so I&apos;m still helpful, but in a sustainable way.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Decisions, goals, and fit</h2>
+
+      <div class="qa-section">
+        <h3>10. Why did you leave your last role?</h3>
+        <p>
+          I left because the gap between my responsibilities and the support and structure around them became too large to be sustainable.
+        </p>
+        <p>
+          My role had grown from IT technician to IT coordinator, but the scope expanded far beyond what one person could reasonably handle: budgeting, vendor management, infrastructure projects, LMS selection, SharePoint and automation, ticketing, endpoint and server patching, dashcam implementation, plus Tier 1–3 support for the whole company. At the same time, there were peers who bypassed normal communication channels, escalated minor issues, and occasionally behaved in ways I felt were disrespectful.
+        </p>
+        <p>
+          I raised concerns about workload, compensation, and flexibility, especially around childcare after my partner returned to work. Those conversations did not lead to meaningful changes. When I eventually resigned, there wasn&apos;t a serious attempt to adjust the role or retain me.
+        </p>
+        <p>
+          It wasn&apos;t an easy decision, because I enjoyed the technical work and liked many of the people I worked with. But I reached a point where staying would have meant burning out and compromising my family life, and that&apos;s not a trade I&apos;m willing to make.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>11. What are you looking for in your next role or engagement?</h3>
+        <p>
+          I&apos;m looking for work where the problems are real and matter to the people experiencing them, where I can own systems end-to-end enough to make meaningful improvements, and where there&apos;s an honest conversation about constraints, tradeoffs, and priorities.
+        </p>
+        <p>
+          In consulting, that looks like small to mid-sized organizations that need someone to untangle their IT and workflows, not with a “big bang” transformation but with practical, staged improvements. In a more traditional role, it would mean a position where my mix of engineering and IT experience is an asset, and where leadership actually wants someone who will raise flags early rather than quietly patching cracks until something breaks.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>12. How do you keep your skills current?</h3>
+        <p>
+          I learn best by building and breaking things in my own lab. I run a homelab with virtualization, containers, monitoring, and security tools, and I use that environment to test new ideas before I recommend them anywhere else.
+        </p>
+        <p>
+          On top of that, I&apos;m constantly reading documentation, vendor blogs, and technical write-ups, and I experiment with tools like Proxmox, Nextcloud, Tailscale, Cloudflare Tunnels, and various security stacks. I also pay attention to the practical side: not just “what&apos;s cool,” but what&apos;s maintainable and supportable for the kinds of teams I actually work with.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>13. How do you balance hands-on work with higher-level planning?</h3>
+        <p>
+          I&apos;m naturally hands-on, but I&apos;ve learned that if you stay in the weeds all the time, you end up fixing the same classes of problems forever.
+        </p>
+        <p>
+          My approach is to get hands-on enough to really understand the situation, step back and ask what the recurring pattern is, and then design a process, automation, or structural change that addresses the pattern, not just the symptom.
+        </p>
+        <p>
+          For example, after rebuilding machines post-ransomware, I didn&apos;t want that to just be a one-off hero moment. We used what we learned to adjust policies, improve backups, deploy better tooling, and document recovery steps so that the next incident, if it ever happens, is less painful and less dependent on specific individuals.
+        </p>
+      </div>
+
+      <div class="qa-section">
+        <h3>14. Why should we work with you?</h3>
+        <p>
+          If you&apos;re dealing with complex, slightly chaotic systems, whether in infrastructure, operations, or IT, I bring a mix of experiences that actually fits that reality.
+        </p>
+        <p>
+          I&apos;ve been the person in steel-toe boots doing QA/QC in the fog, the engineer designing roads and pump systems, the planner trying to keep equipment running, and the IT coordinator rebuilding systems after a ransomware attack. I understand how decisions in one area ripple into others, and I&apos;m comfortable talking to everyone from operators to executives.
+        </p>
+        <p>
+          Most importantly, I don&apos;t just throw tools at problems. I listen, map what&apos;s really happening, and then build solutions that match your context, not someone else&apos;s slide deck. If you want honest assessment, practical design, and someone who genuinely cares about doing things properly, we&apos;re going to work well together.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Wrap-up</h2>
+      <p>
+        This page isn&apos;t a script I try to memorize. It&apos;s more like a mirror of how I actually think about my work, the choices I&apos;ve made, and the kind of problems I&apos;m drawn to.
+      </p>
+      <p>
+        If what you&apos;ve read here resonates, the next step is simple: have a conversation. Whether it turns into a project, a role, or just a good exchange of ideas, I&apos;m always interested in talking with people who care about doing things properly and sustainably.
+      </p>
+      <div class="btn-row">
+        <a class="btn dark" href="mailto:jonathan@thoms.email">Start a conversation</a>
+        <a class="btn ghost" href="/career-story.html">Read my full career story</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+  </footer>
+</body>
+</html>
