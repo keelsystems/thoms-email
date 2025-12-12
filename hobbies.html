@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hobbies & Side Quests | Jonathan Thoms</title>
+  <title>Hobbies and Side Quests | Jonathan Thoms</title>
   <meta name="description" content="A long-form look at the hobbies and side quests that shaped me, from karate and cadet camps to instruments, games, cybersecurity, and powerlifting." />
   <meta name="author" content="Jonathan Thoms" />
   <link rel="canonical" href="https://thoms.email/hobbies.html" />
-  <meta property="og:title" content="Hobbies & Side Quests | Jonathan Thoms" />
+
+  <meta property="og:title" content="Hobbies and Side Quests | Jonathan Thoms" />
   <meta property="og:description" content="How karate, cadets, music, games, art, and powerlifting wired the way I learn and work today." />
   <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
   <meta property="og:type" content="website" />
+
   <meta name="theme-color" content="#0d1b2a" />
   <link rel="icon" href="/favicon.svg" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -21,116 +23,47 @@
       --ink:#0d1b2a;
       --ink-2:#1b263b;
       --sky:#ccd6f6;
+
       --paper:#f5f7fa;
       --text:#2a2f36;
+      --muted:#5b6472;
+
       --card:#ffffff;
-      --ring: rgba(13,27,42,.15);
-      --radius:14px;
-      --shadow: 0 6px 18px rgba(0,0,0,.07);
+      --ring: rgba(13,27,42,.14);
+      --radius:16px;
+      --shadow: 0 10px 26px rgba(0,0,0,.08);
+
+      --focus: rgba(99, 102, 241, .35);
     }
+
     [data-theme='dark']{
       --paper:#0b1220;
       --text:#e6e9ef;
+      --muted:#a6b0c3;
+
       --card:#0f172a;
       --ring: rgba(255,255,255,.12);
+      --shadow: 0 14px 30px rgba(0,0,0,.28);
+      --focus: rgba(165, 180, 252, .35);
     }
 
-    html{ scroll-behavior:smooth; }
+    html{scroll-behavior:smooth;}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:var(--paper);
-      line-height:1.6;
+      line-height:1.75;
       transition: background .2s ease, color .2s ease;
     }
 
-    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
-    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
-    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
-    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
-    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
-
-    header{
-      text-align:left;
-      padding:3rem 1rem 2.3rem;
-      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
-      color:#fff;
+    a{color:inherit}
+    a:focus, button:focus{
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 10px;
     }
-
-    .hero{
-      max-width:1000px;
-      margin:0 auto;
-    }
-
-    .hero-kicker{
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      font-size:.72rem;
-      color:var(--sky);
-      opacity:.9;
-    }
-
-    header h1{
-      margin:.45rem 0 .35rem;
-      font-size:clamp(1.9rem, 2.6vw + 1.2rem, 2.5rem);
-    }
-
-    header p.sub{
-      margin:0 0 .55rem;
-      max-width:650px;
-      color:#e2e8ff;
-    }
-
-    header p.sub-secondary{
-      margin:0 0 1.1rem;
-      max-width:650px;
-      font-size:.97rem;
-      color:#c7d2fe;
-    }
-
-    .cta{
-      display:inline-flex;
-      gap:.6rem;
-      align-items:center;
-      background:#fff;
-      color:var(--ink);
-      text-decoration:none;
-      padding:.55rem .9rem;
-      border-radius:10px;
-      font-weight:600;
-      box-shadow:0 8px 16px rgba(0,0,0,.08);
-      border:1px solid transparent;
-      font-size:.9rem;
-    }
-
-    .cta.secondary{
-      background:transparent;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.25);
-      box-shadow:none;
-    }
-
-    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
-    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
-    section h2{margin:.2rem 0 1rem; color:var(--ink)}
-    h3{margin:.6rem 0 .3rem}
-    h4{margin:.4rem 0 .25rem}
-    ul{margin:.4rem 0 .8rem 1.1rem}
-    .grid{display:grid; gap:1rem}
-    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-
-    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
-
-    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center}
-    header .btn-row{justify-content:flex-start;}
-    .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
-    .btn.dark{background:var(--ink); color:#fff}
-    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
 
     .skip-link{
       position:absolute;
@@ -139,13 +72,222 @@
       padding:.5rem .75rem;
       background:#fff;
       color:var(--ink);
-      border-radius:8px;
-      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      border-radius:10px;
+      box-shadow:0 8px 18px rgba(0,0,0,.14);
       z-index:100;
     }
-    .skip-link:focus{
-      left:1rem;
-      top:1rem;
+    .skip-link:focus{left:1rem; top:1rem;}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:60;
+      background:rgba(13,27,42,.96);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
+    .nav .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:.8rem 1rem;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      font-weight:800;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.9}
+    .brand a{color:#fff;text-decoration:none}
+
+    .menu{
+      display:flex;
+      gap:.35rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      opacity:.92;
+      font-size:.95rem;
+      padding:.35rem .6rem;
+      border-radius:10px;
+    }
+    .menu a:hover{background:rgba(255,255,255,.10); opacity:1}
+
+    .toggle{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.25);
+      color:#fff;
+      border-radius:10px;
+      padding:.35rem .6rem;
+      font-weight:800;
+      cursor:pointer
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      padding:.62rem .95rem;
+      border-radius:12px;
+      font-weight:800;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, opacity .12s ease;
+    }
+    .btn.primary{
+      background:#fff;
+      color:var(--ink);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.ghost{
+      background:transparent;
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.26);
+    }
+    .btn.ghost:hover{border-color: rgba(255,255,255,.42)}
+    .btn.small{
+      padding:.50rem .78rem;
+      font-weight:800;
+      border-radius:12px;
+    }
+
+    header{
+      position:relative;
+      color:#fff;
+      background:
+        radial-gradient(900px 420px at 20% 10%, rgba(204,214,246,.20), transparent 60%),
+        radial-gradient(700px 380px at 80% 10%, rgba(99,102,241,.18), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      overflow:hidden;
+    }
+    header .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding: 3.1rem 1rem 2.1rem;
+      display:grid;
+      gap:.85rem;
+      align-items:start;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:.45rem;
+      align-items:center;
+      font-weight:900;
+      font-size:.88rem;
+      letter-spacing:.2px;
+      color:#fff;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      padding: .22rem .55rem;
+      border-radius: 999px;
+      width:max-content;
+      opacity:.98;
+    }
+
+    header h1{
+      margin:.15rem 0 0;
+      font-size:clamp(2.0rem, 2.4vw + 1.2rem, 2.8rem);
+      letter-spacing:.2px;
+    }
+    header p.sub{
+      margin:.25rem 0 0;
+      color: var(--sky);
+      max-width: 980px;
+      font-size: 1.03rem;
+      line-height:1.55;
+    }
+    header p.sub-secondary{
+      margin:.15rem 0 0;
+      color: rgba(255,255,255,.90);
+      max-width: 980px;
+      font-size: .98rem;
+      line-height:1.6;
+    }
+
+    .header-actions{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      margin-top:.35rem;
+    }
+
+    .jump{
+      display:flex;
+      gap:.45rem;
+      flex-wrap:wrap;
+      margin-top:.2rem;
+    }
+    .jump a{
+      text-decoration:none;
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.20);
+      background: rgba(255,255,255,.08);
+      padding: .32rem .58rem;
+      border-radius: 999px;
+      font-weight:800;
+      font-size:.88rem;
+      opacity:.95;
+    }
+    .jump a:hover{opacity:1; border-color: rgba(255,255,255,.32)}
+
+    main{
+      max-width:1080px;
+      margin: 0 auto;
+      padding: 1.4rem 1rem 2.2rem;
+    }
+
+    section{
+      background:var(--card);
+      border:1px solid var(--ring);
+      border-radius:var(--radius);
+      padding: 1.35rem;
+      margin: 1rem 0;
+      box-shadow:var(--shadow);
+    }
+
+    section h2{
+      margin:.1rem 0 1rem;
+      color:var(--ink);
+      letter-spacing:.2px;
+    }
+    [data-theme='dark'] section h2{color: var(--text)}
+    h3{margin:1.05rem 0 .25rem}
+    p{margin:.55rem 0}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+
+    .prose{max-width: 78ch;}
+
+    .inline-actions{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:.75rem;
+    }
+
+    footer{
+      text-align:center;
+      color: var(--muted);
+      padding: 1.8rem 1rem 2.2rem;
+      font-size:.95rem;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .btn{transition:none}
+      .btn.primary:hover{transform:none}
     }
   </style>
 
@@ -169,198 +311,242 @@
       };
     })();
   </script>
-</head>
-<body>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jonathan Thoms",
+    "jobTitle": "IT Consultant",
+    "image": "https://thoms.email/assets/Portrait@2x.png",
+    "url": "https://thoms.email/hobbies.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/jonathan-thoms-a43b65a4/"
+    ]
+  }
+  </script>
+</head>
+
+<body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="nav" aria-label="Primary">
     <div class="wrap">
-      <div class="brand">
-        <span class="dot"></span>
-        <a href="/" style="color:#fff;text-decoration:none;">Jonathan Thoms</a>
-      </div>
+      <div class="brand"><span class="dot"></span> <a href="/">Jonathan Thoms</a></div>
       <div class="menu">
         <a href="/">Home</a>
         <a href="/career.html">Career</a>
+        <a href="/career-story.html">Career Story</a>
+        <a href="/interview-qa.html">Interview Q&amp;A</a>
         <a href="/keel.html">Keel Systems</a>
         <a href="/lifestyle.html">Lifestyle</a>
-        <a href="/hobbies.html">Hobbies</a>
-        <a href="/#gear">Gear</a>
+        <a href="/hobbies.html" aria-current="page">Hobbies</a>
         <a href="/#contact">Contact</a>
         <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost small" href="/assets/Jonathan_Thoms_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
         <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
       </div>
     </div>
   </nav>
 
   <header>
-    <div class="hero">
-      <div class="hero-kicker">Hobbies</div>
-      <h1>Hobbies & side quests</h1>
+    <div class="wrap">
+      <span class="kicker">Hobbies</span>
+      <h1>Hobbies and side quests</h1>
       <p class="sub">
         From karate and cadet camps to tracing, instruments, games, and powerlifting, this is the story of how my brain likes to learn when nobody is grading me.
       </p>
       <p class="sub-secondary">
         If the home page is the highlight reel, this is the director&apos;s cut of the side quests. It explains why I collect skills the way some people collect jerseys or consoles.
       </p>
-      <div class="btn-row">
-        <a class="cta" href="mailto:jonathan@thoms.email">Email me</a>
-        <a class="cta secondary" href="/">Back to home</a>
+
+      <div class="header-actions" role="group" aria-label="Primary actions">
+        <a class="btn primary" href="mailto:jonathan@thoms.email">Email me</a>
+        <a class="btn ghost" href="/">Back to home</a>
+      </div>
+
+      <div class="jump" aria-label="Jump to sections">
+        <a href="#early">Early years</a>
+        <a href="#elementary">Elementary</a>
+        <a href="#middle">Middle school</a>
+        <a href="#high">High school</a>
+        <a href="#games">Games and tech</a>
+        <a href="#current">Current favourites</a>
+        <a href="#why">Why it matters</a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section>
-      <h2>Early years: noise, movement, and drawing outside the lines</h2>
-      <p>
-        My hobbies started the way a lot of kids&apos; do: loud and unstructured. As a toddler I was constantly singing, dancing, and drawing. I loved tracing more than freehand sketching and could happily spend ages copying lines and shapes from things I liked.
-      </p>
-      <p>
-        Eventually a middle school art teacher told me that tracing “wasn&apos;t real drawing” and graded pretty harshly. That took most of the joy out of visual art for me at the time, and I mostly walked away from it. Looking back, it&apos;s a good example of how feedback can either unlock a hobby or shut it down.
-      </p>
+    <section id="early">
+      <div class="prose">
+        <h2>Early years: noise, movement, and drawing outside the lines</h2>
+        <p>
+          My hobbies started the way a lot of kids&apos; do: loud and unstructured. As a toddler I was constantly singing, dancing, and drawing. I loved tracing more than freehand sketching and could happily spend ages copying lines and shapes from things I liked.
+        </p>
+        <p>
+          Eventually a middle school art teacher told me that tracing “wasn&apos;t real drawing” and graded pretty harshly. That took most of the joy out of visual art for me at the time, and I mostly walked away from it. Looking back, it&apos;s a good example of how feedback can either unlock a hobby or shut it down.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Elementary school: collect-all-the-hobbies mode</h2>
-      <p>
-        Elementary school was a full sampler platter of activities. I did Kenpo Karate, piano lessons, soccer, baseball, cross-country running, and after-school ball hockey. If there was a signup sheet, odds were good my name ended up on it.
-      </p>
-      <p>
-        Karate gave me my first real taste of structured practice: repetition, forms, and the idea that small improvements over time add up. Piano quietly taught me the same thing in a different format, even if my undiagnosed ADHD made consistent practice harder than it needed to be.
-      </p>
-      <p>
-        Out of all the sports, baseball was my favourite to play. The pace, the strategy, and the fact that it did not require endless sprinting suited me just fine. Soccer and basketball demanded more cardio than I realistically enjoyed; baseball let my brain stay engaged without feeling like one long fitness test.
-      </p>
+    <section id="elementary">
+      <div class="prose">
+        <h2>Elementary school: collect-all-the-hobbies mode</h2>
+        <p>
+          Elementary school was a full sampler platter of activities. I did Kenpo Karate, piano lessons, soccer, baseball, cross-country running, and after-school ball hockey. If there was a signup sheet, odds were good my name ended up on it.
+        </p>
+        <p>
+          Karate gave me my first real taste of structured practice: repetition, forms, and the idea that small improvements over time add up. Piano quietly taught me the same thing in a different format, even if my undiagnosed ADHD made consistent practice harder than it needed to be.
+        </p>
+        <p>
+          Out of all the sports, baseball was my favourite to play. The pace, the strategy, and the fact that it did not require endless sprinting suited me just fine. Soccer and basketball demanded more cardio than I realistically enjoyed; baseball let my brain stay engaged without feeling like one long fitness test.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Middle school: cadets, robotics, and more instruments</h2>
-      <p>
-        Middle school is when hobbies started to feel a bit more serious. I joined the Royal Canadian Air Cadets, played snare drum in the band, and kept up with Kenpo Karate and piano while adding guitar lessons, Lego robotics, baseball, and after-school basketball.
-      </p>
-      <p>
-        Cadets were a big deal for me. It was structure, community, uniforms, and clear expectations. Band gave me a place to hit things with sticks in an organized way and call it music. Robotics scratched the problem-solving itch: build, test, break, repeat.
-      </p>
-      <p>
-        I also started poking around the edges of cybersecurity during this time. Forums, 4Chan boards, Tor browser, phishing attempts and scams. I learned a lot about how people try to trick you online and, thankfully, I did my experimenting young, with mostly harmless consequences. Those lessons show up in how I think about security and risk today.
-      </p>
+    <section id="middle">
+      <div class="prose">
+        <h2>Middle school: cadets, robotics, and more instruments</h2>
+        <p>
+          Middle school is when hobbies started to feel a bit more serious. I joined the Royal Canadian Air Cadets, played snare drum in the band, and kept up with Kenpo Karate and piano while adding guitar lessons, Lego robotics, baseball, and after-school basketball.
+        </p>
+        <p>
+          Cadets were a big deal for me. It was structure, community, uniforms, and clear expectations. Band gave me a place to hit things with sticks in an organized way and call it music. Robotics scratched the problem-solving itch: build, test, break, repeat.
+        </p>
+        <p>
+          I also started poking around the edges of cybersecurity during this time. Forums, 4Chan boards, Tor browser, phishing attempts and scams. I learned a lot about how people try to trick you online and, thankfully, I did my experimenting young, with mostly harmless consequences. Those lessons show up in how I think about security and risk today.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>High school: cadet leadership, more music, and camp trade-offs</h2>
-      <p>
-        In high school I doubled down on cadets. I stayed in the Royal Canadian Air Cadets and moved up in responsibility: snare drummer to lead stick, stepping in as drum major, drill party and rifle drill party. It was discipline, marching, synchronization, and learning how to lead peers in a very visible way.
-      </p>
-      <p>
-        I kept going with Kenpo Karate, piano lessons, guitar lessons, and added full drum kit lessons. I loved playing instruments but never quite felt like I fit in with traditional “musician” circles outside of cadets. That missing sense of “this is my people” is probably what kept me from going deeper into music as a formal path.
-      </p>
-      <p>
-        Cadet summer camps were a whole ecosystem of their own. I attended:
-      </p>
-      <ul>
-        <li>Basic</li>
-        <li>ITLC (Introduction to Leadership)</li>
-        <li>ITAC (Introduction to Aviation)</li>
-        <li>Aircraft Maintenance</li>
-        <li>Glider</li>
-        <li>Power</li>
-      </ul>
-      <p>
-        Those camps gave me hands-on exposure to leadership, aviation, and aircraft maintenance in a way school never could. The trade-off was timing. Cadet camps often overlapped with baseball season, so eventually I had to step away from playing baseball even though it was the sport I loved most.
-      </p>
+    <section id="high">
+      <div class="prose">
+        <h2>High school: cadet leadership, more music, and camp trade-offs</h2>
+        <p>
+          In high school I doubled down on cadets. I stayed in the Royal Canadian Air Cadets and moved up in responsibility: snare drummer to lead stick, stepping in as drum major, drill party and rifle drill party. It was discipline, marching, synchronization, and learning how to lead peers in a very visible way.
+        </p>
+        <p>
+          I kept going with Kenpo Karate, piano lessons, guitar lessons, and added full drum kit lessons. I loved playing instruments but never quite felt like I fit in with traditional “musician” circles outside of cadets. That missing sense of “this is my people” is probably what kept me from going deeper into music as a formal path.
+        </p>
+        <p>
+          Cadet summer camps were a whole ecosystem of their own. I attended:
+        </p>
+        <ul>
+          <li>Basic</li>
+          <li>ITLC (Introduction to Leadership)</li>
+          <li>ITAC (Introduction to Aviation)</li>
+          <li>Aircraft Maintenance</li>
+          <li>Glider</li>
+          <li>Power</li>
+        </ul>
+        <p>
+          Those camps gave me hands-on exposure to leadership, aviation, and aircraft maintenance in a way school never could. The trade-off was timing. Cadet camps often overlapped with baseball season, so eventually I had to step away from playing baseball even though it was the sport I loved most.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Karate, piano, burnout, and ADHD</h2>
-      <p>
-        Over time, I burned out on both karate and piano. The structure that was so helpful at first eventually became a grind when it slammed up against neurodivergent attention and the realities of homework, cadets, and everything else.
-      </p>
-      <p>
-        At the time, I did not have the language for ADHD or the tools to work with my brain instead of fighting it. I just knew that the expectation to practice a certain way, for a certain amount of time, every day, felt heavier and heavier until I stepped away.
-      </p>
-      <p>
-        As an adult, with a better understanding of how my brain works, I have slowly picked piano back up on my own terms. It is less “you must practice this piece for 30 minutes” and more “let&apos;s sit down, play, and see what feels good to work on.” That small shift in framing makes a big difference.
-      </p>
+    <section id="burnout">
+      <div class="prose">
+        <h2>Karate, piano, burnout, and ADHD</h2>
+        <p>
+          Over time, I burned out on both karate and piano. The structure that was so helpful at first eventually became a grind when it slammed up against neurodivergent attention and the realities of homework, cadets, and everything else.
+        </p>
+        <p>
+          At the time, I did not have the language for ADHD or the tools to work with my brain instead of fighting it. I just knew that the expectation to practice a certain way, for a certain amount of time, every day, felt heavier and heavier until I stepped away.
+        </p>
+        <p>
+          As an adult, with a better understanding of how my brain works, I have slowly picked piano back up on my own terms. It is less “you must practice this piece for 30 minutes” and more “let&apos;s sit down, play, and see what feels good to work on.” That small shift in framing makes a big difference.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Games, tech, and home lab energy</h2>
-      <p>
-        On the tech side, my hobby timeline looks something like:
-      </p>
-      <ul>
-        <li>Nintendo 64</li>
-        <li>PlayStation 2 (huge Guitar Hero and Rock Band era)</li>
-        <li>Xbox 360 (Call of Duty with the boys)</li>
-        <li>Gaming PC (dabbling in all kinds of titles)</li>
-      </ul>
-      <p>
-        I have built two gaming PCs so far. The second one now pulls double duty as a Proxmox host in my home lab, which feels like the most on-brand evolution possible: start as a machine for games, end up as infrastructure for experiments and services.
-      </p>
-      <p>
-        That same curiosity that led me into forums, Tor, and early security stuff now shows up in how I approach networking, virtualization, and home lab projects. It is still a hobby, but it also feeds directly into my professional life.
-      </p>
+    <section id="games">
+      <div class="prose">
+        <h2>Games, tech, and home lab energy</h2>
+        <p>
+          On the tech side, my hobby timeline looks something like:
+        </p>
+        <ul>
+          <li>Nintendo 64</li>
+          <li>PlayStation 2 (huge Guitar Hero and Rock Band era)</li>
+          <li>Xbox 360 (Call of Duty with the boys)</li>
+          <li>Gaming PC (dabbling in all kinds of titles)</li>
+        </ul>
+        <p>
+          I have built two gaming PCs so far. The second one now pulls double duty as a Proxmox host in my home lab, which feels like the most on-brand evolution possible: start as a machine for games, end up as infrastructure for experiments and services.
+        </p>
+        <p>
+          That same curiosity that led me into forums, Tor, and early security stuff now shows up in how I approach networking, virtualization, and home lab projects. It is still a hobby, but it also feeds directly into my professional life.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Post-secondary: powerlifting and a different kind of discipline</h2>
-      <p>
-        In post-secondary, the only new hobby that really stuck was powerlifting. It will get its own treatment on the Lifestyle page, but the short version is that lifting became a way to build structure and progress into my weeks when everything else felt chaotic.
-      </p>
-      <p>
-        It is data-driven and tactile at the same time: numbers on the bar, numbers in the logbook, but also the real-world feedback of what your body can do on a given day. It is a nice counterbalance to the screen-heavy nature of IT work.
-      </p>
+    <section id="lifting">
+      <div class="prose">
+        <h2>Post-secondary: powerlifting and a different kind of discipline</h2>
+        <p>
+          In post-secondary, the only new hobby that really stuck was powerlifting. It will get its own treatment on the Lifestyle page, but the short version is that lifting became a way to build structure and progress into my weeks when everything else felt chaotic.
+        </p>
+        <p>
+          It is data-driven and tactile at the same time: numbers on the bar, numbers in the logbook, but also the real-world feedback of what your body can do on a given day. It is a nice counterbalance to the screen-heavy nature of IT work.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Current favourites: sports, magic, martial arts, and music</h2>
-      <h3>Sports</h3>
-      <p>
-        These days, I follow baseball, Formula 1, hockey, and football more closely than is probably healthy: the Toronto Blue Jays, McLaren and Oscar Piastri, the Montreal Canadiens, and the Buffalo Bills.
-      </p>
-      <p>
-        I care about the numbers and strategy as much as the highlight reels, and that sometimes spills onto social media when I feel like arguing about race pace, bullpen usage, or why a certain play call made sense on paper even if it failed in real time.
-      </p>
+    <section id="current">
+      <div class="prose">
+        <h2>Current favourites: sports, magic, martial arts, and music</h2>
 
-      <h3>Magic and martial arts</h3>
-      <p>
-        I fell in love with magic as a kid and still enjoy the mix of technique and performance that good magic demands. It is sleight of hand plus psychology plus showmanship. My background in Kenpo Karate sits in the same part of my brain: structured practice, forms, repetition, and the satisfaction of seeing your coordination improve over time.
-      </p>
-      <p>
-        I am slowly finding ways to bring structured martial practice back into my life because it keeps my brain happier and gives me a reason to move on purpose.
-      </p>
+        <h3>Sports</h3>
+        <p>
+          These days, I follow baseball, Formula 1, hockey, and football more closely than is probably healthy: the Toronto Blue Jays, McLaren and Oscar Piastri, the Montreal Canadiens, and the Buffalo Bills.
+        </p>
+        <p>
+          I care about the numbers and strategy as much as the highlight reels, and that sometimes spills onto social media when I feel like arguing about race pace, bullpen usage, or why a certain play call made sense on paper even if it failed in real time.
+        </p>
 
-      <h3>Music</h3>
-      <p>
-        Piano, guitar, and drums are still my main instruments. I am not chasing a career in music, but I treat it like any other skill stack: regular practice when I can, learning from people who are better than me, and occasionally recording or performing when it makes sense.
-      </p>
-      <p>
-        I still feel like I never fully got the “band with friends” experience outside of cadets. If the right opportunity came up to do something part-time, on the side, or just for fun, I would be open to it. The spark is still there.
-      </p>
+        <h3>Magic and martial arts</h3>
+        <p>
+          I fell in love with magic as a kid and still enjoy the mix of technique and performance that good magic demands. It is sleight of hand plus psychology plus showmanship. My background in Kenpo Karate sits in the same part of my brain: structured practice, forms, repetition, and the satisfaction of seeing your coordination improve over time.
+        </p>
+        <p>
+          I am slowly finding ways to bring structured martial practice back into my life because it keeps my brain happier and gives me a reason to move on purpose.
+        </p>
+
+        <h3>Music</h3>
+        <p>
+          Piano, guitar, and drums are still my main instruments. I am not chasing a career in music, but I treat it like any other skill stack: regular practice when I can, learning from people who are better than me, and occasionally recording or performing when it makes sense.
+        </p>
+        <p>
+          I still feel like I never fully got the “band with friends” experience outside of cadets. If the right opportunity came up to do something part-time, on the side, or just for fun, I would be open to it. The spark is still there.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h2>Why it matters</h2>
-      <p>
-        None of these hobbies are random distractions. They are a pattern of how I like to engage with the world. I go deep, I collect skills, and I stick with the things that reward curiosity and repetition over time.
-      </p>
-      <p>
-        Karate, cadets, and powerlifting taught me discipline and structure. Music and magic taught me timing, performance, and how details change the whole experience. Games, early cybersecurity experiments, and home lab projects taught me how systems behave under pressure, what happens when things break, and how to learn quickly without burning everything down.
-      </p>
-      <p>
-        The same mindset that makes me obsess over a drum pattern, a magic routine, or a Proxmox setup is what I bring to IT projects, documentation, and coaching. If you give me something complex, let me understand it end to end, and give me the freedom to iterate on it, I will treat it with the same level of attention I bring to the hobbies that have been following me around since I was a kid.
-      </p>
-      <div class="btn-row">
-        <a class="btn dark" href="mailto:jonathan@thoms.email">Work with me</a>
-        <a class="btn ghost" href="/lifestyle.html">Explore the Lifestyle page</a>
+    <section id="why">
+      <div class="prose">
+        <h2>Why it matters</h2>
+        <p>
+          None of these hobbies are random distractions. They are a pattern of how I like to engage with the world. I go deep, I collect skills, and I stick with the things that reward curiosity and repetition over time.
+        </p>
+        <p>
+          Karate, cadets, and powerlifting taught me discipline and structure. Music and magic taught me timing, performance, and how details change the whole experience. Games, early cybersecurity experiments, and home lab projects taught me how systems behave under pressure, what happens when things break, and how to learn quickly without burning everything down.
+        </p>
+        <p>
+          The same mindset that makes me obsess over a drum pattern, a magic routine, or a Proxmox setup is what I bring to IT projects, documentation, and coaching. If you give me something complex, let me understand it end to end, and give me the freedom to iterate on it, I will treat it with the same level of attention I bring to the hobbies that have been following me around since I was a kid.
+        </p>
+
+        <div class="inline-actions">
+          <a class="btn primary" href="mailto:jonathan@thoms.email">Work with me</a>
+          <a class="btn ghost" href="/lifestyle.html">Explore the Lifestyle page</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+    © 2025 Jonathan Thoms
   </footer>
 </body>
 </html>

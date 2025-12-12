@@ -1,8 +1,13 @@
+TODAY="$(date -I)"
+cat > sitemap.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://thoms.email/</loc>
-    <lastmod>2025-10-06</lastmod>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://thoms.email/</loc><lastmod>${TODAY}</lastmod><priority>1.0</priority></url>
+  <url><loc>https://thoms.email/career.html</loc><lastmod>${TODAY}</lastmod><priority>0.9</priority></url>
+  <url><loc>https://thoms.email/career-story.html</loc><lastmod>${TODAY}</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thoms.email/interview-qa.html</loc><lastmod>${TODAY}</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thoms.email/keel.html</loc><lastmod>${TODAY}</lastmod><priority>0.8</priority></url>
+  <url><loc>https://thoms.email/hobbies.html</loc><lastmod>${TODAY}</lastmod><priority>0.7</priority></url>
+  <url><loc>https://thoms.email/lifestyle.html</loc><lastmod>${TODAY}</lastmod><priority>0.7</priority></url>
 </urlset>
+EOF
