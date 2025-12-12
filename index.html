@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jonathan Thoms | IT • Keel Systems • EtchCentric</title>
-  <meta name="description" content="Jonathan Thoms - IT consultant and workflow designer for small teams; founder of Keel Systems and EtchCentric Creations. Infrastructure, automation, and documented processes that scale." />
+  <meta name="description" content="Jonathan Thoms — IT consultant and workflow designer for small teams. Infrastructure, automation, and documented processes that scale." />
   <meta name="author" content="Jonathan Thoms" />
   <link rel="canonical" href="https://thoms.email/" />
+
   <meta property="og:title" content="Jonathan Thoms | IT, Keel Systems, EtchCentric" />
   <meta property="og:description" content="IT consulting, workflow design, and automation with a people-first approach. Founder of Keel Systems and EtchCentric Creations." />
   <meta property="og:image" content="https://thoms.email/assets/Portrait@2x.png" />
   <meta property="og:type" content="website" />
+
   <meta name="theme-color" content="#0d1b2a" />
   <link rel="icon" href="/favicon.svg" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -21,24 +23,31 @@
       --ink:#0d1b2a;
       --ink-2:#1b263b;
       --sky:#ccd6f6;
+
       --paper:#f5f7fa;
       --text:#2a2f36;
+      --muted:#5b6472;
+
       --card:#ffffff;
-      --ring: rgba(13,27,42,.15);
-      --radius:14px;
-      --shadow: 0 6px 18px rgba(0,0,0,.07);
+      --ring: rgba(13,27,42,.14);
+      --radius:16px;
+      --shadow: 0 10px 26px rgba(0,0,0,.08);
+
+      --focus: rgba(99, 102, 241, .35);
     }
+
     [data-theme='dark']{
       --paper:#0b1220;
       --text:#e6e9ef;
+      --muted:#a6b0c3;
+
       --card:#0f172a;
       --ring: rgba(255,255,255,.12);
+      --shadow: 0 14px 30px rgba(0,0,0,.28);
+      --focus: rgba(165, 180, 252, .35);
     }
 
-    html{
-      scroll-behavior:smooth;
-    }
-
+    html{scroll-behavior:smooth;}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
@@ -49,94 +58,13 @@
       transition: background .2s ease, color .2s ease;
     }
 
-    .nav{position:sticky; top:0; z-index:50; background:var(--ink); color:#fff; border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav .wrap{max-width:1000px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; gap:1rem; justify-content:space-between}
-    .brand{display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:#fff;opacity:.85}
-    .menu{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center}
-    .menu a{color:#fff; text-decoration:none; opacity:.9; font-size:.95rem; padding:.35rem .6rem; border-radius:10px}
-    .menu a:hover{background:rgba(255,255,255,.1); opacity:1}
-    .toggle{background:transparent;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:.35rem .6rem;font-weight:600;cursor:pointer}
+    a{color:inherit}
+    a:focus, button:focus{
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
 
-    header{
-      text-align:center;
-      padding:3.5rem 1rem 2.5rem;
-      background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
-      color:#fff
-    }
-    header .avatar{
-      --avatar: 200px; --ringw: 4px; --y: 22%;
-      inline-size: var(--avatar); aspect-ratio: 1/1; border-radius:50%; padding: var(--ringw);
-      margin: 0 auto 1rem;
-      background: linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(135deg, #cdd7ee, #e9eef8) border-box;
-      box-shadow: 0 10px 26px rgba(0,0,0,.18);
-    }
-    header .avatar .frame{inline-size:100%; block-size:100%; border-radius:50%; overflow:hidden}
-    header .avatar img{inline-size:100%; block-size:100%; object-fit:cover; object-position:50% var(--y); transform: translateZ(0); image-rendering:auto}
-    header h1{margin:.5rem 0 0; font-size:clamp(1.8rem, 2.4vw + 1.2rem, 2.4rem)}
-    header p.sub{margin:.35rem 0 .35rem; color:var(--sky)}
-    header p.sub-secondary{margin:0 auto 1rem; max-width:650px; font-size:.98rem; color:#e2e8ff}
-    .cta{display:inline-flex; gap:.6rem; align-items:center; background:#fff; color:var(--ink); text-decoration:none; padding:.6rem .9rem; border-radius:10px; font-weight:600; box-shadow:0 8px 16px rgba(0,0,0,.08)}
-    .cta:hover{transform:translateY(-1px)}
-    .cta.secondary{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25); box-shadow:none}
-
-    main{max-width:1000px; margin:2rem auto; padding:0 1rem}
-    section{background:var(--card); border-radius:var(--radius); padding:1.4rem; margin-bottom:1.3rem; box-shadow:var(--shadow); border:1px solid var(--ring)}
-    section h2{margin:.2rem 0 1rem; color:var(--ink)}
-    h3{margin:.6rem 0 .3rem}
-    ul{margin:.4rem 0 .8rem 1.1rem}
-    .grid{display:grid; gap:1rem}
-    @media (min-width:800px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-
-    footer{text-align:center; color:#667; padding:1.6rem; font-size:.95rem}
-    .pill{display:inline-block; background:#eef2ff; color:#2a2f36; padding:.25rem .6rem; border-radius:999px; font-size:.85rem; margin:.15rem .25rem 0 0}
-    [data-theme='dark'] .pill{background:#1e293b; color:#e6e9ef}
-    .btn-row{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center}
-    .btn{display:inline-block; text-decoration:none; padding:.5rem .8rem; border-radius:10px; font-weight:600}
-    .btn.dark{background:var(--ink); color:#fff}
-    .btn.ghost{border:1px solid #c9d1e3; color:var(--ink); background:#fff}
-
-    .pillars-grid{
-      display:grid;
-      gap:1rem;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      margin-top:.75rem;
-    }
-    .pillar-card{
-      padding:1rem;
-      border-radius:var(--radius);
-      border:1px solid var(--ring);
-      background:var(--card);
-      box-shadow:var(--shadow);
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    }
-    .pillar-card:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,.10);
-      border-color: rgba(13,27,42,.25);
-    }
-    .pillar-card h3{margin:.1rem 0 .4rem}
-    .pillar-card p{margin:0 0 .6rem; font-size:.95rem}
-    .pillar-card a{
-      font-size:.9rem;
-      font-weight:600;
-      text-decoration:none;
-      color:var(--ink);
-    }
-    [data-theme='dark'] .pillar-card a{color:#cbd5ff}
-
-    .gear-note{
-      font-size:.85rem;
-      color:#777;
-      margin-top:.4rem;
-    }
-    [data-theme='dark'] .gear-note{color:#9ca3af}
-
-    /* Skip link for accessibility */
     .skip-link{
       position:absolute;
       left:-999px;
@@ -144,18 +72,322 @@
       padding:.5rem .75rem;
       background:#fff;
       color:var(--ink);
-      border-radius:8px;
-      box-shadow:0 4px 10px rgba(0,0,0,.15);
+      border-radius:10px;
+      box-shadow:0 8px 18px rgba(0,0,0,.14);
       z-index:100;
     }
-    .skip-link:focus{
-      left:1rem;
-      top:1rem;
+    .skip-link:focus{left:1rem; top:1rem;}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(13,27,42,.96);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
+    .nav .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      padding:.8rem 1rem;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem;
+      font-weight:800;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand .dot{
+      width:10px;height:10px;border-radius:999px;background:#fff;opacity:.9
+    }
+    .menu{
+      display:flex;
+      gap:.35rem;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      opacity:.92;
+      font-size:.95rem;
+      padding:.35rem .6rem;
+      border-radius:10px;
+    }
+    .menu a:hover{background:rgba(255,255,255,.10); opacity:1}
+    .toggle{
+      background:transparent;
+      border:1px solid rgba(255,255,255,.25);
+      color:#fff;
+      border-radius:10px;
+      padding:.35rem .6rem;
+      font-weight:700;
+      cursor:pointer
+    }
+
+    header{
+      position:relative;
+      text-align:center;
+      padding:4rem 1rem 2.5rem;
+      color:#fff;
+      background:
+        radial-gradient(900px 420px at 20% 10%, rgba(204,214,246,.20), transparent 60%),
+        radial-gradient(700px 380px at 80% 10%, rgba(99,102,241,.18), transparent 60%),
+        linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+      overflow:hidden;
+    }
+
+    header .wrap{
+      max-width:1080px;
+      margin:0 auto;
+      display:grid;
+      gap:1.25rem;
+      align-items:center;
+      justify-items:center;
+    }
+
+    .avatar{
+      --avatar: 180px; --ringw: 4px; --y: 22%;
+      inline-size: var(--avatar);
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      padding: var(--ringw);
+      background: linear-gradient(#ffffff,#ffffff) padding-box, linear-gradient(135deg, #cdd7ee, #e9eef8) border-box;
+      box-shadow: 0 14px 34px rgba(0,0,0,.22);
+    }
+    .avatar .frame{
+      inline-size:100%;
+      block-size:100%;
+      border-radius:50%;
+      overflow:hidden;
+    }
+    .avatar img{
+      inline-size:100%;
+      block-size:100%;
+      object-fit:cover;
+      object-position:50% var(--y);
+      transform: translateZ(0);
+    }
+
+    header h1{
+      margin:.2rem 0 0;
+      font-size:clamp(1.9rem, 2.4vw + 1.2rem, 2.6rem);
+      letter-spacing:.2px;
+    }
+    header p.sub{
+      margin:.1rem 0 0;
+      color:var(--sky);
+      font-size:1.02rem;
+      max-width: 820px;
+    }
+    header p.sub-secondary{
+      margin:.3rem 0 0;
+      max-width: 860px;
+      color: rgba(255,255,255,.90);
+      font-size: .98rem;
+    }
+
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      justify-content:center;
+      margin-top:.25rem;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      padding:.28rem .6rem;
+      border-radius:999px;
+      font-size:.88rem;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      color:#fff;
+      opacity:.98;
+      white-space:nowrap;
+    }
+    .badge .dot{
+      width:8px;height:8px;border-radius:999px;background:#fff;opacity:.9
+    }
+    .badge.wip .dot{background:#fde68a}
+
+    .btn-row{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:.65rem;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      text-decoration:none;
+      padding:.62rem .95rem;
+      border-radius:12px;
+      font-weight:800;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, opacity .12s ease;
+    }
+    .btn.primary{
+      background:#fff;
+      color:var(--ink);
+      box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    }
+    .btn.primary:hover{transform:translateY(-1px)}
+    .btn.ghost{
+      background:transparent;
+      color:#fff;
+      border: 1px solid rgba(255,255,255,.26);
+    }
+    .btn.ghost:hover{border-color: rgba(255,255,255,.42)}
+    .btn.small{
+      padding:.50rem .78rem;
+      font-weight:800;
+      border-radius:12px;
+    }
+
+    main{
+      max-width:1080px;
+      margin: 0 auto;
+      padding: 1.4rem 1rem 2.2rem;
+    }
+
+    section{
+      background:var(--card);
+      border:1px solid var(--ring);
+      border-radius:var(--radius);
+      padding: 1.35rem;
+      margin: 1rem 0;
+      box-shadow:var(--shadow);
+    }
+
+    section h2{
+      margin:.1rem 0 1rem;
+      color:var(--ink);
+      letter-spacing:.2px;
+    }
+    [data-theme='dark'] section h2{color: var(--text)}
+
+    .muted{color:var(--muted)}
+    .lead{font-size:1.02rem}
+
+    .grid{
+      display:grid;
+      gap:1rem;
+    }
+    @media (min-width:860px){
+      .grid.cols-2{grid-template-columns: 1fr 1fr;}
+      .grid.cols-3{grid-template-columns: 1fr 1fr 1fr;}
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:.5rem;
+    }
+    [data-theme='dark'] .card{box-shadow: 0 10px 24px rgba(0,0,0,.22)}
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(13,27,42,.22);
+      box-shadow: 0 16px 34px rgba(0,0,0,.12);
+    }
+    [data-theme='dark'] .card:hover{border-color: rgba(255,255,255,.18)}
+    .card h3{margin:.1rem 0 .25rem}
+    .card p{margin:0; color:var(--muted); font-size:.96rem}
+    .card a.link{
+      text-decoration:none;
+      font-weight:800;
+      color: var(--ink);
+      display:inline-flex;
+      gap:.35rem;
+      align-items:center;
+      width:max-content;
+    }
+    [data-theme='dark'] .card a.link{color:#cbd5ff}
+
+    .kicker{
+      display:inline-flex;
+      gap:.45rem;
+      align-items:center;
+      font-weight:900;
+      font-size:.88rem;
+      letter-spacing:.2px;
+      color: var(--ink);
+      background: rgba(99,102,241,.10);
+      border: 1px solid rgba(99,102,241,.20);
+      padding: .22rem .55rem;
+      border-radius: 999px;
+      width:max-content;
+    }
+    [data-theme='dark'] .kicker{color:#e6e9ef}
+
+    .kicker.wip{
+      background: rgba(253,230,138,.12);
+      border-color: rgba(253,230,138,.25);
+    }
+
+    .inline-actions{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:.75rem;
+    }
+
+    ul{margin:.4rem 0 0 1.1rem}
+    li{margin:.2rem 0}
+
+    .note{
+      border-left: 4px solid rgba(99,102,241,.65);
+      padding: .85rem 1rem;
+      border-radius: 12px;
+      background: rgba(99,102,241,.07);
+      color: var(--text);
+    }
+    [data-theme='dark'] .note{
+      background: rgba(99,102,241,.12);
+      border-left-color: rgba(165,180,252,.7);
+    }
+
+    .disabled-link{
+      opacity:.6;
+      cursor:not-allowed;
+      text-decoration:none;
+      pointer-events:none;
+    }
+
+    footer{
+      text-align:center;
+      color: var(--muted);
+      padding: 1.8rem 1rem 2.2rem;
+      font-size:.95rem;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      .card, .btn{transition:none}
+      .card:hover, .btn.primary:hover{transform:none}
     }
   </style>
 
   <script>
-    // theme toggle
     (function(){
       const key = 'theme';
       const saved = localStorage.getItem(key);
@@ -185,345 +417,219 @@
     "image": "https://thoms.email/assets/Portrait@2x.png",
     "url": "https://thoms.email/",
     "sameAs": [
-      "https://www.linkedin.com/in/jonathan-thoms-a43b65a4/",
-      "https://keel.systems/"
+      "https://www.linkedin.com/in/jonathan-thoms-a43b65a4/"
     ]
   }
   </script>
 </head>
-<body>
 
+<body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <nav class="nav" aria-label="Primary">
     <div class="wrap">
       <div class="brand"><span class="dot"></span> Jonathan Thoms</div>
       <div class="menu">
-        <a href="#top">Home</a>
+        <a href="/">Home</a>
         <a href="/career.html">Career</a>
         <a href="/keel.html">Keel Systems</a>
         <a href="/lifestyle.html">Lifestyle</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#gear">Gear</a>
+        <a href="/hobbies.html">Hobbies</a>
         <a href="#contact">Contact</a>
         <a href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost small" href="/assets/Jonathan_Thoms_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
         <button class="toggle" type="button" onclick="toggleTheme()">Light/Dark</button>
       </div>
     </div>
   </nav>
 
-  <header id="top">
-    <div class="avatar">
-      <div class="frame">
-        <img src="assets/Portrait.png"
-             srcset="assets/Portrait@2x.png 2x"
-             alt="Portrait of Jonathan Thoms"
-             loading="eager" decoding="async">
+  <header>
+    <div class="wrap">
+      <div class="avatar" aria-hidden="true">
+        <div class="frame">
+          <img src="assets/Portrait.png"
+               srcset="assets/Portrait@2x.png 2x"
+               alt="Portrait of Jonathan Thoms"
+               loading="eager" decoding="async">
+        </div>
       </div>
-    </div>
-    <h1>Jonathan Thoms</h1>
-    <p class="sub">IT consultant and workflow designer helping small teams untangle their systems.</p>
-    <p class="sub-secondary">
-      I work with owners and operators who are tired of vague processes, mystery IT, and KPIs that seem to punish them for telling the truth.
-      Together we map how work actually gets done, design clear decision paths, and choose metrics that reflect reality instead of encouraging people to fudge the numbers.
-      Then we build the infrastructure and automations to match.
-    </p>
-    <div class="btn-row" role="group" aria-label="Primary actions">
-      <a class="cta" href="https://keel.systems" target="_blank" rel="noopener">Work with me (IT)</a>
-      <a class="cta secondary" href="#career">View my experience</a>
+
+      <div>
+        <h1>Jonathan Thoms</h1>
+        <p class="sub">IT consultant and workflow designer helping small teams untangle their systems.</p>
+
+        <div class="badge-row" aria-label="Highlights">
+          <span class="badge"><span class="dot"></span> Infrastructure and security</span>
+          <span class="badge"><span class="dot"></span> Microsoft 365 and SharePoint</span>
+          <span class="badge"><span class="dot"></span> Automation and reporting</span>
+          <span class="badge wip"><span class="dot"></span> Keel Systems is a work in progress</span>
+        </div>
+
+        <p class="sub-secondary">
+          I work with owners and operators who are tired of vague processes, mystery IT, and KPIs that punish honesty.
+          We map how work actually gets done, design clear decision paths, and build supportable systems your team can own.
+        </p>
+
+        <div class="btn-row" role="group" aria-label="Primary actions">
+          <a class="btn primary" href="#contact">Start a conversation</a>
+          <a class="btn ghost" href="/career.html">View career</a>
+          <a class="btn ghost" href="/assets/Jonathan_Thoms_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- Overview -->
-    <section id="overview">
-      <h2>What I do</h2>
-      <p>
-        Detail-focused, people-first IT consultant based in Newfoundland.
-        I come in where everything “kind of works” but nobody can explain how, map the real workflows,
-        and turn that into documented systems, decision trees, KPIs, and automations your team can actually follow.
-        I care as much about the flowchart on the wall as the server in the rack, and I want your metrics working for you,
-        not against you.
+    <section aria-labelledby="what-i-do">
+      <h2 id="what-i-do">What I do</h2>
+      <p class="lead">
+        Detail-focused, people-first IT consulting based in Newfoundland and Labrador.
+        I help small teams turn “kind of working” environments into documented, repeatable systems with clean ownership.
       </p>
-      <div>
-        <span class="pill">Workflow and decision mapping</span>
-        <span class="pill">Infrastructure and networking</span>
-        <span class="pill">Cybersecurity follow through</span>
-        <span class="pill">SharePoint and Power Automate</span>
-        <span class="pill">Process and documentation</span>
-        <span class="pill">Small business IT</span>
+
+      <div class="grid cols-3" role="list">
+        <div class="card" role="listitem">
+          <div>
+            <span class="kicker">Workflow</span>
+            <h3>Workflow and decision mapping</h3>
+            <p>Clarify responsibilities, decision gates, and handoffs so the team stops guessing and starts executing.</p>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <div>
+            <span class="kicker">Infrastructure</span>
+            <h3>Infrastructure and security</h3>
+            <p>Practical, supportable networks and systems with sensible hardening, backup, and access control.</p>
+          </div>
+        </div>
+
+        <div class="card" role="listitem">
+          <div>
+            <span class="kicker">Automation</span>
+            <h3>Automation and reporting</h3>
+            <p>Reduce manual admin with Power Automate, PowerShell, and Python workflows that survive the handover.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Pillar cards -->
-    <section id="pillars">
-      <h2>Where everything lives on this site</h2>
-      <div class="pillars-grid">
-        <article class="pillar-card">
-          <h3>Keel Systems</h3>
-          <p>
-            My consulting practice for small businesses and teams that need clear workflows and dependable infrastructure
-            instead of mystery boxes. If you're here because something feels messy, start here.
-          </p>
-          <a href="#keel">Learn more about Keel Systems →</a>
+    <section aria-labelledby="site-map">
+      <h2 id="site-map">Explore</h2>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <div>
+            <span class="kicker wip">WIP</span>
+            <h3>Keel Systems</h3>
+            <p>
+              My consulting practice is actively being built. The story is real, the work is real,
+              and the public-facing “service menu” is being refined.
+            </p>
+          </div>
+          <a class="link" href="/keel.html">See Keel Systems →</a>
         </article>
 
-        <article class="pillar-card">
-          <h3>Career and experience</h3>
-          <p>
-            Previous roles running IT operations at an active mine and earlier work in engineering,
-            planning, and telecom, plus the projects that shaped how I think about systems and people.
-          </p>
-          <a href="#career">View my experience →</a>
+        <article class="card">
+          <div>
+            <span class="kicker">Career</span>
+            <h3>Career and experience</h3>
+            <p>Roles, responsibilities, and the projects that shaped how I approach systems and people.</p>
+          </div>
+          <a class="link" href="/career.html">View career →</a>
         </article>
 
-        <article class="pillar-card">
-          <h3>Lifestyle and training</h3>
-          <p>
-            Personal systems for training, nutrition, and staying functional while working in tech.
-            This section will grow as I document more of what actually works.
-          </p>
-          <a href="#lifestyle">Read the lifestyle story →</a>
+        <article class="card">
+          <div>
+            <span class="kicker">Lifestyle</span>
+            <h3>Lifestyle and training</h3>
+            <p>Personal systems for training, nutrition, and staying functional while working in tech.</p>
+          </div>
+          <a class="link" href="/lifestyle.html">Read lifestyle →</a>
         </article>
 
-        <article class="pillar-card">
-          <h3>Hobbies and creative</h3>
-          <p>
-            Sports fandom, magic, Kenpo Karate, and music. The other places I obsess over reps, feedback loops,
-            and deliberate practice.
-          </p>
-          <a href="#hobbies">See what I am into →</a>
+        <article class="card">
+          <div>
+            <span class="kicker">Hobbies</span>
+            <h3>Hobbies and creative</h3>
+            <p>Sports, music, martial arts, magic. The other places I obsess over reps and feedback loops.</p>
+          </div>
+          <a class="link" href="/hobbies.html">See hobbies →</a>
         </article>
       </div>
     </section>
 
-    <!-- Career -->
-    <section id="career">
-      <h2>Career and experience</h2>
+    <section aria-labelledby="highlights">
+      <h2 id="highlights">Selected highlights</h2>
 
-      <h3>Independent IT Consultant (Keel Systems)</h3>
-      <p><em>Nov 2025 to present · Newfoundland</em></p>
-      <ul>
-        <li>Help small businesses and teams map their workflows and design decision-gate flowcharts that match reality.</li>
-        <li>Translate those workflows into practical IT systems, documentation, and automations that teams can support after an engagement.</li>
-        <li>Work with leadership to choose KPIs and reporting that reflect what is actually happening instead of encouraging people to game the numbers.</li>
-        <li>Coach owners and internal “accidental IT people” so they are confident running the environment day to day.</li>
-      </ul>
-
-      <div class="grid cols-2">
-        <div>
-          <h3>IT Coordinator, Canada Fluorspar Inc.</h3>
-          <p><em>Nov 2024 to Nov 2025 · St. Lawrence, NL</em></p>
-          <ul>
-            <li>Led site-wide IT operations for 100+ users across multiple facilities, keeping systems stable, secure, and scalable.</li>
-            <li>Managed vendor relationships and service contracts while overseeing licensing, firewalls, and escalations.</li>
-            <li>Built a SharePoint-based ticketing system integrated with Teams for streamlined reporting.</li>
-            <li>Implemented asset tracking for laptops, radios, and specialized equipment with audit trails.</li>
-            <li>Modernized firewalls, wireless access points, and SFP fiber links, and standardized onboarding and offboarding.</li>
-          </ul>
+      <div class="grid cols-3">
+        <div class="card">
+          <div>
+            <span class="kicker">Operations</span>
+            <h3>Remote mine IT operations</h3>
+            <p>Led day-to-day IT operations and modernization work across users, servers, and multiple facilities.</p>
+          </div>
+          <a class="link" href="/career.html">Details →</a>
         </div>
-        <div>
-          <h3>IT Technician, Canada Fluorspar Inc.</h3>
-          <p><em>Jul 2024 to Nov 2024 · St. Lawrence, NL</em></p>
-          <ul>
-            <li>Provided on-site support and coordinated with external providers to maintain network integrity.</li>
-            <li>Standardized troubleshooting flows and equipment management and partnered with HR on account lifecycle.</li>
-          </ul>
+
+        <div class="card">
+          <div>
+            <span class="kicker">Network</span>
+            <h3>Resort Wi-Fi diagnostics</h3>
+            <p>Topology documentation, bottleneck identification, and a practical upgrade path built for budget reality.</p>
+          </div>
+          <a class="link" href="/keel.html">More →</a>
+        </div>
+
+        <div class="card">
+          <div>
+            <span class="kicker">Workflow</span>
+            <h3>SharePoint ticketing and automation</h3>
+            <p>Email ingestion, ticket numbering, SLAs, notifications, and reporting that management can trust.</p>
+          </div>
+          <a class="link" href="/career.html">Read more →</a>
         </div>
       </div>
 
-      <h3>Earlier roles</h3>
-      <ul>
-        <li>Mobile Maintenance Planner; Junior and Project Engineer, Canada Fluorspar Inc.</li>
-        <li>Network Technician, Bell Aliant.</li>
-      </ul>
-
-      <h3>Selected projects</h3>
-      <div class="grid cols-2">
-        <div>
-          <h4>Hosted ERP SLA redline</h4>
-          <p>Due diligence and contract work defining uptime credits, DR validation, and secure data exit standards with vendors.</p>
-        </div>
-        <div>
-          <h4>Nextcloud family cloud</h4>
-          <p>Self-hosted media and documents stack with Jellyfin and Tailscale for secure remote access.</p>
-        </div>
-        <div>
-          <h4>Cyber awareness program</h4>
-          <p>Evaluation and rollout planning for training workflows across departments.</p>
-        </div>
-        <div>
-          <h4>Asset tracker suite</h4>
-          <p>Automated equipment assignment and audits with SharePoint, Power Automate, and Teams.</p>
-        </div>
-      </div>
-
-      <h3>Skills and tools</h3>
-      <div class="grid cols-2">
-        <ul>
-          <li>Windows Server, Active Directory and Entra ID hybrid, Intune, Group Policy.</li>
-          <li>Firewall and Wi Fi planning, segmentation, and rollout.</li>
-          <li>Microsoft 365, SharePoint, Teams, Power Automate integrations.</li>
-          <li>Backup, disaster recovery, endpoint security and hardening.</li>
-        </ul>
-        <ul>
-          <li>PowerShell and Python automation and reporting.</li>
-          <li>Documentation and runbooks that real users can follow.</li>
-          <li>Project management and vendor coordination.</li>
-          <li>Small business operations and customer support.</li>
-        </ul>
+      <div class="note" style="margin-top:1rem;">
+        If you’re a small team that needs clarity, documentation, and systems that actually match the real workflow,
+        reach out. I’ll tell you honestly whether I’m the right fit.
       </div>
     </section>
 
-    <!-- EtchCentric -->
-    <section id="etchcentric">
-      <h2>EtchCentric Creations</h2>
-      <p>
-        Laser engraving and cutting studio for custom gifts, signage, and branded products.
-        I handle creative direction, production, client relations, and marketing, and I treat it as a playground
-        for visual design and small-business process.
+    <section aria-labelledby="etchcentric">
+      <h2 id="etchcentric">EtchCentric Creations</h2>
+      <p class="lead">
+        Laser engraving and cutting for custom gifts, signage, and branded products.
+        It’s also where I practice small-business process, creative direction, and production discipline.
       </p>
-      <div class="btn-row">
-        <a class="btn dark" href="https://etchcentric.square.site/" target="_blank" rel="noopener">Visit the store</a>
+      <div class="inline-actions">
+        <a class="btn primary" href="https://etchcentric.square.site/" target="_blank" rel="noopener">Visit the store</a>
         <a class="btn ghost" href="#contact">Request a custom piece</a>
       </div>
     </section>
 
-    <!-- Keel Systems -->
-    <section id="keel">
-      <h2>Keel Systems</h2>
-      <p>
-        Keel Systems is my consulting practice for small businesses and teams who want clear workflows and infrastructure they actually understand.
-        I come in when things “kind of work” but nobody can explain how, map the real processes, and turn them into flowcharts, decision gates,
-        and KPIs that work for you instead of against you.
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p class="lead">
+        Email is the best place to start. If you include what’s not working and what “better” looks like,
+        I’ll reply with the fastest next step.
       </p>
-      <p>
-        From there we translate the maps into practical IT:
-      </p>
-      <ul>
-        <li>Self-hosted and cloud stacks using tools like Proxmox, Nextcloud, and Jellyfin, fronted by Traefik and Cloudflare Tunnels.</li>
-        <li>Network segmentation, firewall policy, and secure remote access with tools such as Tailscale.</li>
-        <li>Lightweight automation for backups, media, and reporting using PowerShell and Python.</li>
-      </ul>
-      <div class="btn-row">
-        <a class="btn dark" href="https://keel.systems" target="_blank" rel="noopener">Visit Keel Systems</a>
-        <a class="btn ghost" href="mailto:jonathan@keel.systems">Consulting inquiries</a>
+
+      <div class="inline-actions">
+        <a class="btn primary" href="mailto:jonathan@thoms.email">jonathan@thoms.email</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="/assets/Jonathan_Thoms_Resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
       </div>
-    </section>
 
-    <!-- Lifestyle -->
-    <section id="lifestyle">
-      <h2>Lifestyle and training</h2>
-      <p>
-        A few years ago I dropped a significant amount of weight and built my strongest powerlifting numbers
-        while working full time. Then life, stress, and priorities shifted and the habits that got me there
-        slipped away.
-      </p>
-      <p>
-        I am now rebuilding those habits with a calmer, systems-first approach: sensible nutrition, strength
-        training that fits around work and family, and routines that I can sustain rather than white-knuckle.
-        The goal is to prove to myself that I can do it again and keep it this time.
-      </p>
-      <p>
-        Longer term I would like to help regular people set up realistic training and nutrition frameworks,
-        especially those balancing demanding jobs and family. If you want to be on the radar for that work,
-        reach out and I will keep you in the loop as it takes shape.
-      </p>
-    </section>
-
-    <!-- Hobbies -->
-    <section id="hobbies">
-      <h2>Hobbies and creative stuff</h2>
-      <h3>Sports</h3>
-      <p>
-        I follow baseball, Formula 1, hockey, and football more closely than is probably healthy:
-        Toronto Blue Jays, McLaren and Oscar Piastri, the Montreal Canadiens, and the Buffalo Bills.
-        I care about the numbers and strategy as much as the highlight reels, and that sometimes spills
-        onto social media when I feel like arguing about race pace or bullpen usage.
-      </p>
-
-      <h3>Magic and martial arts</h3>
-      <p>
-        I fell in love with magic as a kid and still enjoy the mix of technique and performance that good
-        magic demands. I also have a background in Kenpo Karate and am slowly finding ways to bring structured
-        practice back into my life because it keeps my brain happier.
-      </p>
-
-      <h3>Music</h3>
-      <p>
-        Piano, guitar, and drums are my main instruments. I am not chasing a career in music, but I treat it
-        like any other skill stack: regular practice, learning from people who are better than me, and
-        occasionally recording or performing when it makes sense.
-      </p>
-
-      <h3>Why it matters</h3>
-      <p>
-        None of these are random distractions. They are examples of how I like to go deep on skills over time.
-        The same mindset that makes me obsess over a mix or a magic routine is what I bring to IT projects,
-        documentation, and coaching.
-      </p>
-    </section>
-
-    <!-- Gear teaser / affiliate-ready -->
-    <section id="gear">
-      <h2>Gear I recommend</h2>
-      <p>
-        This is a running list of tools and gadgets I actually use or would confidently buy again.
-        Some links may be affiliate links that help support my projects at no extra cost to you.
-      </p>
-      <div class="grid cols-2">
-        <div>
-          <h3>OBD II scanner</h3>
-          <p>
-            My go-to scanner for basic diagnostics and clearing codes when working on personal vehicles
-            and helping friends. Great for quick sanity checks before a shop visit.
-          </p>
-          <p>
-            <a href="javascript:void(0)" aria-disabled="true">View scanner on store →</a>
-          </p>
-        </div>
-        <div>
-          <h3>Homelab and network essentials</h3>
-          <p>
-            Routers, switches, label makers, and a few quality-of-life tools that make small network jobs
-            far less painful.
-          </p>
-          <p>
-            <a href="javascript:void(0)" aria-disabled="true">See IT and homelab gear →</a>
-          </p>
-        </div>
-        <div>
-          <h3>Lifting and recovery</h3>
-          <p>
-            Belt, straps, and simple recovery tools that survive real training instead of just looking good
-            in product photos.
-          </p>
-          <p>
-            <a href="javascript:void(0)" aria-disabled="true">See training gear →</a>
-          </p>
-        </div>
-      </div>
-      <p class="gear-note">
-        I will expand this section over time and clearly mark affiliate links as I add them.
-      </p>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        If you want to talk about IT, Keel Systems, training, or any of the projects on this site,
-        email is the best place to start. I am also on LinkedIn.
-      </p>
-      <p>
-        <a class="btn dark" href="mailto:jonathan@thoms.email">jonathan@thoms.email</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/jonathan-thoms-a43b65a4/" target="_blank" rel="noopener">LinkedIn profile</a>
+      <p class="muted" style="margin-top:.8rem;">
+        Note: Keel Systems (keel.systems) is currently being rebuilt. This site (thoms.email) is the best place to learn about me right now.
       </p>
     </section>
   </main>
 
   <footer>
-    © 2025 Jonathan Thoms · Some links on this site may be affiliate links at no extra cost to you.
+    © 2025 Jonathan Thoms
   </footer>
 </body>
 </html>
