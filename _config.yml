@@ -1,0 +1,16 @@
+title: Jonathan's Blog
+description: Chess journey, home projects, and side quests
+url: https://mains.email
+baseurl: ""
+
+plugins:
+  - jekyll-feed
+
+permalink: /blog/:categories/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

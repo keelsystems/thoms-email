@@ -1,0 +1,43 @@
+---
+layout: post
+title: Search
+---
+
+<input id="q" type="search" placeholder="Search posts..." style="width:100%;padding:10px;font-size:1rem;border-radius:10px;border:1px solid #ddd" />
+<ul id="results"></ul>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script>
+(async function () {
+  const res = await fetch("/search.json");
+  const docs = await res.json();
+
+  const idx = lunr(function () {
+    this.ref("url");
+    this.field("title");
+    this.field("content");
+    this.field("categories");
+    this.field("tags");
+    docs.forEach(d => this.add(d));
+  });
+
+  const q = document.getElementById("q");
+  const results = document.getElementById("results");
+
+  function render(list) {
+    results.innerHTML = "";
+    list.slice(0, 25).forEach(item => {
+      const d = docs.find(x => x.url === item.ref);
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${d.url}">${d.title}</a> <span class="meta">(${(d.date||"").slice(0,10)})</span>`;
+      results.appendChild(li);
+    });
+  }
+
+  q.addEventListener("input", () => {
+    const term = q.value.trim();
+    if (!term) return render([]);
+    render(idx.search(term));
+  });
+})();
+</script>
